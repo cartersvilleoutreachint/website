@@ -1,0 +1,90 @@
+.header{
+    width: 100%;
+    min-height: 90vh;
+    background-image: url("/img/main-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.mainHeading{
+    font-size: 5.5rem;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    font-weight: 900;
+    padding: 0 10%;
+}
+
+.headerContent{
+    width: 100vw;
+}
+
+.mainSubHeading{
+    text-align: center;
+    display: inline-block;
+    margin-top: 3vw !important;
+    width: 40%;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    margin: 0 30%;
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+.upcomingEvents{
+    margin-top: 3.5vw !important;
+}
+
+
+/* MEDIUM AND SMALL LAPTOPS */
+@media only screen and (min-width: 991px) and (max-width: 1920px){
+    
+    .mainHeading{
+        font-size: 5rem;
+    }
+}
+
+
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .header{
+        min-height: 70vh;
+    }
+    .mainHeading{
+        font-size: 4rem;
+        padding: 0 5%;
+    }
+    .mainSubHeading{
+        margin-top: 4vw !important;
+        width: 60%;
+        margin: 0 20%;
+        font-size: 1.5rem;
+    }
+    
+    .upcomingEvents{
+        margin-top: 4.5vw !important;
+    }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .header{
+        min-height: 60vh;
+    }
+    .mainHeading{
+        font-size: 3rem;
+        padding: 0 5%;
+    }
+    .mainSubHeading{
+        margin-top: 6vw !important;
+        width: 75%;
+        margin: 0 12.5%;
+        font-size: 1.4rem;
+    }
+    
+    .upcomingEvents{
+        margin-top: 8vw !important;
+    }
+}

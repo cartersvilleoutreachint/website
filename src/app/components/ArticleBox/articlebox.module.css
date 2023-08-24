@@ -1,0 +1,102 @@
+.articleBox{
+    display: inline-block;
+    width: 25vw;
+    color: var(--main-color);
+}
+
+li:has(.articleBox){
+    display: flex;
+    justify-content: space-around;
+}
+
+.mainImg{
+    width: 25vw;
+    height: 15vw;
+    object-fit: cover;
+    object-position: center;
+}
+
+.title{
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 0 1vw;
+}
+
+.dateWrapper{
+    padding: 1vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dateWrapper div{
+    display: inline-block;
+    position: relative;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+.dateWrapper div::after{
+    height: 2vw;
+    width: 2vw;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 1vw);
+    right: 105%;
+    background-image: url("../../../../public/img/date-icon.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.readArticle{
+    padding: 0.8vw 6vw;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .articleBox{
+        width: 35vw;
+    }
+    .mainImg{
+        width: 35vw;
+        height: 20vw;
+    }
+    .dateWrapper{
+        padding: 1.5vw 0;
+    }
+    .dateWrapper div{
+        font-size: 1.4rem;
+    }
+    .dateWrapper div::after{
+        height: 4vw;
+        width: 4vw;
+        top: calc(50% - 2vw);
+    }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .articleBox{
+        width: 60vw;
+    }
+    .mainImg{
+        width: 60vw;
+        height: 30vw;
+    }
+    .dateWrapper{
+        padding: 2vw 0;
+    }
+    .dateWrapper div{
+        font-size: 1.6rem;
+    }
+    .dateWrapper div::after{
+        height: 6vw;
+        width: 6vw;
+        top: calc(50% - 3vw);
+    }
+    .readArticle{
+        padding: 1.5vw 10vw;
+    }
+}
+
+

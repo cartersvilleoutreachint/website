@@ -1,0 +1,82 @@
+.jailMinistry{
+    background-image: url("/img/jail-bg.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 20vw;
+    position: relative;
+    z-index: 10;
+    padding: 2vw;
+}
+
+.shader{
+    z-index: -1;
+}
+
+.readMore{
+position: relative;
+   top: 2vw;
+}
+
+.jailMinistryHeading{
+    color: var(--main-text-color);
+    font-weight: bolder;
+}
+
+.jailMinistryDescription{
+    margin-top: 2vw;
+    width: 50%;
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+}
+
+/* MEDIUM AND SMALL LAPTOP STYLES */
+@media only screen and (min-width: 991px) and (max-width: 1920px){
+    .jailMinistryDescription{
+     font-size: 1.5rem;
+     width: 65%;
+    }
+    .jailMinistry{
+        padding: 3vw;
+    }
+}
+
+/* SMALL LAPTOP STYLES */
+@media only screen and (min-width: 991px) and (max-width: 1400px){
+    .jailMinistry{
+        padding: 4vw;
+    }
+    .readMore{
+        position: relative;
+       top: 1vw;
+    }
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .jailMinistry{
+        min-height: 25vw;
+        padding: 5vw;
+    }
+    .jailMinistryDescription{
+        width: 80%;
+    }
+    .readMore{
+        top: 2vw;
+    }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .jailMinistry{
+        min-height: 25vw;
+        padding: 8vw;
+    }
+    .jailMinistryDescription{
+        width: 90%;
+    }
+    .readMore{
+        top: 2vw;
+    }
+}
+

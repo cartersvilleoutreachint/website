@@ -1,0 +1,119 @@
+.mediaCoverageSection{
+    padding: 2vw 0;
+}
+
+.mediaHeading{
+    padding: 0 0 2vw 2vw;
+}
+li:has(.mediaBox){
+    display: flex;
+    justify-content: space-around;
+}
+.mediaBox{
+    display: inline-block;
+    width: 25vw;
+    height: 100%;
+    margin: 0 4vw;
+}
+    .mediaBoxImg{
+        width: 25vw;
+        height: 15vw;
+        object-fit: cover;
+        pointer-events: none;
+        user-select: none;
+    }
+    .mediaBoxTitle{
+        color: var(--main-color);
+        font-weight: 700;
+        font-size: 2rem;
+        padding: 0.8vw 10% 0.8vw 0;
+    }
+    .mediaBoxLink{
+        margin-top: auto;
+        display: inline-block;
+        position: relative;
+        width: 75%;
+        text-decoration: none;
+        color: #69727b;
+        border: 3px solid #69727b;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 0.5vw 0;
+        font-weight: 500;
+        transition: 0.3s color;
+    }
+    .mediaBoxLink::after{
+        background-color:#69727b;
+        border: 3px solid #69727b;
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top:0;
+        left:-3px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        clip-path: circle(0% at 50% 100%);
+        transition: 0.3s clip-path;
+    }
+    .mediaBoxLink:hover{
+        color: var(--main-text-color);
+    }
+    .mediaBoxLink:hover::after{
+        clip-path: circle(100% at 50% 100%);
+    }
+
+/* MEDIUM AND SMALL LAPTOPS */
+@media only screen and (min-width: 991px) and (max-width: 1920px){
+    .mediaBoxTitle{
+        font-size: 1.6rem;
+    }
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .mediaCoverageSection{
+        padding: 3vw 0;
+    }
+    .mediaBox{
+        width: 40vw;
+    }
+        .mediaBoxImg{
+            width: 40vw;
+            height: 22vw;
+        }
+        .mediaBoxTitle{
+            font-size: 1.8rem;
+        }
+        .mediaBoxLink{
+            border: 3px solid #69727b;
+            font-size: 1.8rem;
+            padding:1vw 0;
+        }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .mediaCoverageSection{
+        padding: 4vw 0;
+    }
+    .mediaHeading{
+        text-align: center;
+        padding: 0;
+    }
+    .mediaBox{
+        display: inline-block;
+        width: 80vw;
+        height: 100%;
+        margin: 10vw 4vw;
+    }
+    
+        .mediaBoxImg{
+            width: 80vw;
+            height: 40vw;
+        }
+        .mediaBoxLink{
+            font-size: 1.8rem;
+            padding: 2vw 0;
+        }
+}

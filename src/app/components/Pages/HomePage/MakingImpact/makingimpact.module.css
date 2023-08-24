@@ -1,0 +1,68 @@
+.makingImpact{
+    min-height: 25vw;
+    position: relative;
+    z-index: 10;
+}
+
+.mainBg{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    z-index: -2;
+}
+
+.shader{
+    z-index: -1;
+}
+
+.text{
+    position: absolute;
+    width: 50%;
+    line-height: 3.5rem;
+    font-size: 2.5rem;
+    font-style: italic;
+    bottom: 20%;
+    right: 20%;
+    letter-spacing: 0.2rem;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .makingImpact{
+        min-height: 40vw;
+    }
+    .text{
+        width: 65%;
+        font-size: 2.3rem;
+        bottom: 15%;
+        right: 10%;
+    }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .makingImpact{
+        min-height: 50vw;
+    }
+    .text{
+        width: 80%;
+        font-size: 1.8rem;
+        bottom: 10%;
+        right: 10%;
+        line-height: 3rem;
+    }
+}
+
+/* VERY SMALL  MOBILE STYLES */
+@media only screen and (max-width: 290px){
+    .text{
+        width: 90%;
+        font-size: 1.3rem;
+        right: 5%;
+        line-height: 2.5rem;
+    }
+}

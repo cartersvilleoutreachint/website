@@ -1,0 +1,130 @@
+.upcomingEvents{
+    padding: 2vw 0;
+}
+
+.upcomingEventsTitle{
+    padding-left: 10vw;
+    padding-bottom: 2vw;
+    position: relative;
+}
+.upcomingEventsTitle::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 8px;
+    top: calc(35% - 4px);
+    left: 0;
+    width: 10vw;
+    background-color: var(--main-color);
+}
+
+/* INDIVIDUAL EVENT STYLES */
+
+li:has(.upcomingEvent){
+    display: flex;
+    justify-content: space-around;
+}
+
+.upcomingEvent{
+    margin: 0.5vw;
+    border-radius: 10px;
+    padding: 0.5vw 1vw;
+    display: inline-block;
+    width: 32vw;
+    color: var(--main-color);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.548);
+}
+
+.upcomingEventTitle{
+    font-size: 1.8rem;
+    margin-left: 0.5vw;
+}
+.dateWrapper, .locationWrapper{
+    display: flex;
+    align-items: center;
+    margin: 0.5vw 0;
+}
+.dateWrapper img, .locationWrapper img{
+    height: 2vw;
+    width: 2vw;
+    margin-right: 0.5vw;
+}
+.dateWrapper span, .locationWrapper span{
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.shortDesc{
+    font-size: 1.3rem;
+    min-height: 5vw;
+}
+
+.linkWrapper a{
+    display: inline-block;
+    position: relative;
+    margin: 1vw 0.5vw;
+}
+
+
+/* SMALL LAPTOP STYLES */
+@media only screen and (min-width: 991px) and (max-width: 1400px){
+    .upcomingEvent{
+        width: 40vw;
+    }
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .upcomingEvents{
+        padding: 3vw 0;
+    }
+    .upcomingEvent{
+        width: 60vw;
+        padding: 1.5vw 2vw;
+    }
+    .dateWrapper span, .locationWrapper span{
+        font-size: 1.3rem;
+    }
+    .dateWrapper img, .locationWrapper img{
+        height: 3vw;
+        width: 3vw;
+    }
+    
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .upcomingEvents{
+        padding: 4vw 0;
+    }
+    .upcomingEvent{
+        width: 80vw;
+        padding: 3.5vw 4vw;
+    }
+    .linkWrapper a{
+        font-size: 1.1rem;
+        top: 2vw;
+    }
+    .dateWrapper span, .locationWrapper span{
+        font-size: 1.3rem;
+    }
+    .dateWrapper img, .locationWrapper img{
+        height: 5vw;
+        width: 5vw;
+    }
+}
+/* VERY SMALL  MOBILE STYLES */
+@media only screen and (max-width: 290px){
+    .dateWrapper img, .locationWrapper img{
+        height: 8vw;
+        width: 8vw;
+    }
+    .linkWrapper a{
+        font-size: 1rem;
+        top: 2vw;
+    }
+    .shortDesc{
+        font-size: 1.3rem;
+        min-height: 5vw;
+    }
+}
