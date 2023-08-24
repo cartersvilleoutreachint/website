@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "updatemain": "git checkout -b main && git add -A && echo 'Enter Commit Message' && read msg && git commit -m \"$msg\" && git push origin main"
+    "updatemain": "git checkout main && git add -A && echo 'Enter Commit Message' && read msg && git commit -m \"$msg\" && git push origin main"
   },
   "dependencies": {
     "@types/node": "20.5.2",
