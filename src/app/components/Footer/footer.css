@@ -27,7 +27,7 @@ footer aside{
         text-decoration: none;
 
      }
-     #footerSocials a:nth-child(1) img{
+     #footerSocials a:nth-child(1) img,  #footerSocials a:nth-child(2) img{
         width: 115%;
         height: 115%;
         margin-top: -7.5%;
@@ -93,11 +93,8 @@ footer aside{
            height: 15vw;
            margin: 0 0;
         }
-        #footerSocials a:nth-child(1){
-            margin-right: 4vw;
-        }
-        #footerSocials a:nth-child(2){
-            margin-left: 4vw;
+        #footerSocials a{
+            margin: 0 2vw;
         }
     
     .footer-links-title{
