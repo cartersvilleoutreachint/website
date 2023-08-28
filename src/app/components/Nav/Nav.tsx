@@ -95,7 +95,7 @@ export default function Nav() {
         </ul>
       </div>
       <a href="https://www.facebook.com/profile.php?id=100064747237262" target="_blank" id="mainNavFacebookIcon">
-        <Image src="./img/facebook-icon.svg" alt="Facebook Icon" width={100} height={100} />
+        <Image src="/img/facebook-icon.svg" alt="Facebook Icon" width={100} height={100} />
       </a>
     </nav>
   )

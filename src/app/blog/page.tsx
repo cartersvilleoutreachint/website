@@ -1,14 +1,7 @@
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-    title: "Blog",
-    description: "Cartersville Outreach International Blog"
-}
+import Blog from "../components/Pages/Blog/Blog/Blog"
 
 export default function BlogPage() {
   return (
-    <main id="blogPage">
-
-    </main>
+    <Blog search="default" />
   )
 }

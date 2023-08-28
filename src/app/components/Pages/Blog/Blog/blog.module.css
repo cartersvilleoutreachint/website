@@ -1,0 +1,17 @@
+.blogList aside{
+    margin: 2vw;
+}
+
+.blogList{
+    flex-wrap: wrap;
+    align-items: stretch;
+    min-height: 50vh;
+}
+
+
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .blogList aside{
+        margin: 4vw;
+    }
+}

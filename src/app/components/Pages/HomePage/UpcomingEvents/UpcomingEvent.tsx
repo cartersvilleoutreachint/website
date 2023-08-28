@@ -18,11 +18,11 @@ export default function UpcomingEvent(props: upcomingEventPropType) {
     <aside className={styles.upcomingEvent}>
         <h4 className={styles.upcomingEventTitle}>{props.title}</h4>
         <div className={styles.dateWrapper}>
-            <Image src="./img/date-icon.svg" width={100} height={100} alt="Date Icon" />
+            <Image src="/img/date-icon.svg" width={100} height={100} alt="Date Icon" />
             <span>{getFormattedTime(props.date)}</span>
         </div>
         <div className={styles.locationWrapper}>
-            <Image src="./img/location-icon.svg" width={100} height={100} alt="Location Icon" />
+            <Image src="/img/location-icon.svg" width={100} height={100} alt="Location Icon" />
             <span>{props.location}</span>
         </div>
         <p className={styles.shortDesc}>{props.shortDesc}</p>

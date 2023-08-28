@@ -28,8 +28,10 @@ body{
     color: var(--main-text-color);
 }
 
+
 section{
     background-color: var(--main-bg-color);
+    padding: 2vw 0;
 }
 
 h2{
@@ -108,6 +110,9 @@ h2{
         padding: 1.5vw 4.5vw;
         min-width: 15vw;
     }
+    section{
+        padding: 3vw 0;
+    }
 }
  
 /* MOBILE STYLES */
@@ -120,6 +125,9 @@ h2{
         font-size: 1.5rem;
         padding: 2.2vw 6.5vw;
         min-width: 20vw;
+    }
+    section{
+        padding: 4vw 0;
     }
 }
 

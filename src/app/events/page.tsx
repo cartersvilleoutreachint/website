@@ -1,14 +1,7 @@
-import { Metadata } from "next";
+import Events from "../components/Pages/Events/Events/Events"
 
-export const metadata: Metadata = {
-    title: "Events",
-    description: "Cartersville Outreach International Events"
-}
-
-export default function BlogPage() {
+export default function EventsPage() {
   return (
-    <main id="eventsPage">
-      
-    </main>
+    <Events search="default" />
   )
 }

@@ -7,13 +7,13 @@ export default function Footer() {
     <footer>
         <aside id="footerSocials">
             <a href="https://www.facebook.com/profile.php?id=100064747237262" target="_blank">
-                <Image src="./img/facebook-icon.svg" alt="Facebook Icon" width={100} height={100}/>
+                <Image src="/img/facebook-icon.svg" alt="Facebook Icon" width={100} height={100}/>
             </a>
             <a href="https://www.instagram.com/cvilleoutreachint" target="_blank">
-                <Image src="./img/instagram-icon.svg" alt="Instagram Icon" width={100} height={100}/>
+                <Image src="/img/instagram-icon.svg" alt="Instagram Icon" width={100} height={100}/>
             </a>
             <a href="https://www.youtube.com/@cartersvilleoutreachminist800" target="_blank">
-                <Image src="./img/youtube-icon.svg" alt="YouTube Icon" width={100} height={100}/>
+                <Image src="/img/youtube-icon.svg" alt="YouTube Icon" width={100} height={100}/>
             </a>
         </aside>
         

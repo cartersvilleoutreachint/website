@@ -1,0 +1,12 @@
+.eventsSection{
+    
+}
+
+.eventList{
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+.eventList aside{
+   margin: 1.5vw;
+}

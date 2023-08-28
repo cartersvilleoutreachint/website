@@ -1,0 +1,44 @@
+.pageBanner{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14vw;
+}
+
+.pageTitle{
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.shader{
+    z-index: -1;
+}
+
+.pageBannerImg{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .pageBanner{
+        height: 20vw;
+    }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .pageBanner{
+        height: 30vw;
+    }
+    .pageTitle{
+        font-size: 4rem;
+    }
+}
