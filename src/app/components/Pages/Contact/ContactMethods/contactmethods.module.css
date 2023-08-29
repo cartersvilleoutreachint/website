@@ -1,0 +1,82 @@
+.contactMethods{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.contactMethod{
+    background-color: #7599bd;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 22vw;
+    padding: 1vw;
+    aspect-ratio: 1/1;
+    text-decoration: none;
+    transition: 0.3s box-shadow;
+}
+
+.contactMethod:hover{
+    box-shadow: 0px 0px 10px var(--secondary-color);
+}
+
+.contactMethodImg{
+    width: 40%;
+    aspect-ratio: 1/1;
+}
+.contactMethodText{
+    color: var(--main-text-color);
+    text-align: center;
+    word-break:normal;
+}
+
+.contactMethod:nth-child(1) .contactMethodText{
+    font-size: 1.8rem;
+}
+.contactMethod:nth-child(2) .contactMethodText{
+    font-size: 1.2rem;
+}
+.contactMethod:nth-child(3) .contactMethodText{
+    font-size: 1.3rem;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .contactMethods{
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    .contactMethod{
+        width: 28vw;
+    }
+    .contactMethod:nth-child(2) .contactMethodText{
+        font-size: 1.1rem;
+    }
+}
+
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .contactMethods{
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .contactMethod{
+        margin: 2vw 0;
+        width: 60vw;
+        padding: 2vw;
+    }
+    
+    .contactMethod:nth-child(1) .contactMethodText{
+        font-size: 2rem;
+    }
+    .contactMethod:nth-child(2) .contactMethodText{
+        font-size: 1.4rem;
+    }
+    .contactMethod:nth-child(3) .contactMethodText{
+        font-size: 1.5rem;
+    }
+}

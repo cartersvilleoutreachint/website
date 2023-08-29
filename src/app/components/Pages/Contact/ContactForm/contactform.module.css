@@ -1,0 +1,111 @@
+.contactFormWrapper{
+    flex-direction: column;
+    margin: 0 5vw;
+    background-color: #7599bd;
+    padding: 2vw 0;
+}
+
+.contactFormTitle{
+    font-family: var(--secondary-font);
+    font-size: 3rem;
+    margin-bottom: 1vw;
+}
+
+.contactForm{
+   width: 28%;
+   
+}
+
+.contactForm label{
+    display: block;
+}
+.contactForm input, .contactForm textarea{
+    display: inline-block;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0.5vw;
+    margin-bottom: 1vw;
+    border: none;
+    border-radius: 5px;
+}
+.contactForm textarea{
+    resize: none;
+}
+
+.contactForm input[type="submit"]{
+    display: inline-block;
+    width: 50%;
+    background-color: #ED7152;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s background-color;
+}
+
+.contactForm input[type="submit"]:hover{
+    background-color: #bd5940;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    
+    .contactFormTitle{
+        font-size: 4rem;
+        margin-bottom: 2vw;
+    }
+    
+    .contactForm{
+       width: 35%;
+       
+    }
+    
+    .contactForm label{
+        font-size: 1.2rem;
+    }
+    .contactForm input, .contactForm textarea{
+        font-size: 1.5rem;
+        padding: 1vw;
+        margin-bottom: 1.5vw;
+    }
+    
+    .contactForm input[type="submit"]{
+        width: 75%;
+        font-size: 1.1rem;
+    }
+}
+
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .contactFormWrapper{
+        margin: 0vw;
+        padding: 4vw 0;
+    }
+    
+    .contactFormTitle{
+        font-size: 5rem;
+        margin-bottom: 3vw;
+    }
+    
+    .contactForm{
+       width: 50%;
+       
+    }
+    
+    .contactForm label{
+        display: block;
+        font-size: 1.3rem;
+    }
+    .contactForm input, .contactForm textarea{
+        font-size: 1.5rem;
+        padding:1.5vw;
+        margin-bottom: 2.5vw;
+    }
+
+    .contactForm input[type="submit"]{
+        width: 75%;
+        font-size: 1.3rem;
+        padding: 2vw 3vw;
+    }
+    
+}
