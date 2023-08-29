@@ -43,6 +43,14 @@
     font-size: 1.3rem;
 }
 
+/* SMALL LAPTOP STYLES */
+@media only screen and (min-width: 991px) and (max-width: 1400px){
+    .contactMethod:nth-child(2) .contactMethodText{
+        font-size: 1.1rem;
+    }
+}
+
+
 /* TABLET STYLES */
 @media only screen and (min-width: 650px) and (max-width: 990px){
     .contactMethods{
