@@ -42,7 +42,7 @@ li:has(.articleBox){
     position: absolute;
     top: calc(50% - 1vw);
     right: 105%;
-    background-image: url("../../../../public/img/date-icon.svg");
+    background-image: url("../../../../../public/img/date-icon.svg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;

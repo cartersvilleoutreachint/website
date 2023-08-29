@@ -1,7 +1,7 @@
 import styles from "./blog.module.css"
 import {Suspense} from "react"
 import BlogList from "./BlogList"
-import Loading from "@/app/components/Misc/Loading/Loading"
+import Loading from "../../../Misc/Loading/Loading"
 
 interface blogPropsType{
     search: string

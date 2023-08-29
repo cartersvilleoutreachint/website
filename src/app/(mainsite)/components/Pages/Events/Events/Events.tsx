@@ -1,7 +1,7 @@
 import styles from "./events.module.css"
 import {Suspense} from "react"
 import EventList from "./EventList"
-import Loading from "@/app/components/Misc/Loading/Loading"
+import Loading from "../../../Misc/Loading/Loading"
 
 interface eventsPropsType{
     search: string

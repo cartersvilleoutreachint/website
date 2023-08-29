@@ -4,7 +4,7 @@ import Carousel from "react-multi-carousel"
 import getUpcomingEventsData from "./getUpcomingEventsData"
 import styles from "./upcomingevents.module.css"
 import UpcomingEvent from "./UpcomingEvent"
-import getCarouselBreakpoints from "@/app/components/utils/getCarouselBreakpoints"
+import getCarouselBreakpoints from "../../../utils/getCarouselBreakpoints"
 
 export default function UpcomingEvents() {
 

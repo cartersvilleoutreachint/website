@@ -1,10 +1,10 @@
 "use client"
 
-import getCarouselBreakpoints from "@/app/components/utils/getCarouselBreakpoints"
+import getCarouselBreakpoints from "../../../utils/getCarouselBreakpoints"
 import getRecentArticleData from "./getRecentArticleData"
 import styles from "./recentarticles.module.css"
 import Carousel from "react-multi-carousel"
-import ArticleBox from "@/app/components/ArticleBox/ArticleBox"
+import ArticleBox from "../../../ArticleBox/ArticleBox"
 import Link from "next/link"
 
 export default function RecentArticles() {

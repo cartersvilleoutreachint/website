@@ -3,7 +3,7 @@
 import Pagination from "../../../Vendor/Pagination/Pagination"
 import {useState} from "react"
 import styles from "./blog.module.css"
-import ArticleBox from "@/app/components/ArticleBox/ArticleBox"
+import ArticleBox from "../../../ArticleBox/ArticleBox"
 import testRecentArticlesData from "../../HomePage/RecentArticles/testRecentArticlesData"
 
 interface blogPropsType{

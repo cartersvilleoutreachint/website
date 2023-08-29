@@ -1,6 +1,6 @@
 "use client"
 
-import getCarouselBreakpoints from "@/app/components/utils/getCarouselBreakpoints"
+import getCarouselBreakpoints from "../../../utils/getCarouselBreakpoints"
 import styles from "./mediacoverage.module.css"
 import getMedia from "./getMedia"
 import MediaBox from "./MediaBox"
