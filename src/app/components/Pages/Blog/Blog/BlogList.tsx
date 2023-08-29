@@ -1,6 +1,6 @@
 "use client"
 
-import Pagination from "../../../Vendor/Pagination"
+import Pagination from "../../../Vendor/Pagination/Pagination"
 import {useState} from "react"
 import styles from "./blog.module.css"
 import ArticleBox from "@/app/components/ArticleBox/ArticleBox"
@@ -11,6 +11,7 @@ interface blogPropsType{
 }
 
 export default function BlogList(props: blogPropsType) {
+    
 const posts = testRecentArticlesData.map((data, i)=>{
     return <ArticleBox key={i} {...data} />
 })

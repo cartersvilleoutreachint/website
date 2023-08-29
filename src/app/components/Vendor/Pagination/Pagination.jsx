@@ -21,7 +21,7 @@ export default function Pagination(props){
     },[props.reload]);
 
     React.useEffect(()=>{
-
+        window.scrollTo(0,0)
     setPages(Math.ceil(props.items.length / props.itemsPerPage));
     const pageCount = Math.ceil(props.items.length / props.itemsPerPage);
 

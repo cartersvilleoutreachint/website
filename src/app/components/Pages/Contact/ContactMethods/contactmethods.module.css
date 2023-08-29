@@ -2,8 +2,8 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .contactMethod{
@@ -12,7 +12,7 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    width: 22vw;
+    width: 18vw;
     padding: 1vw;
     aspect-ratio: 1/1;
     text-decoration: none;
