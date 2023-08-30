@@ -1,0 +1,175 @@
+.dashboardNav{
+    display: inline-block;
+    width: 15vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: var(--main-color);
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.582);
+    transition: 0.4s transform;
+    z-index: 997;
+}
+
+.navLogo{
+    padding: 0 1vw;
+    margin: 1vw 0;
+    text-align: center;
+    font-family: var(--secondary-font);
+}
+
+.menuTitle{
+    color: #fefcfa8e;
+    font-weight: 300;
+    padding-left: 0.5vw;
+    margin-top: 4vw;
+}
+
+.navMenu{
+    padding-left: 1.5vw;
+    list-style-type: none;
+}
+
+.navLink{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--main-text-color);
+    font-weight: 300;
+    transition: 0.3s filter;
+}
+.navLink:hover{
+    filter: brightness(50%);
+}
+
+.navMenu li{
+    margin: 1vw 0;
+    position: relative;
+}
+
+.active::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top:0;
+    left: -1vw;
+    height: 100%;
+    width: 3px;
+    background-color: var(--main-text-color);
+    border-radius: 999px;
+}
+
+.navClose{
+    display: none;
+    border: none;
+    background-color: #4F4F4F;
+    color: var(--main-text-color);
+    position: absolute;
+}
+
+.navClose span{
+    display: inline-block;
+}
+
+.navCloseFull{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    top:0;
+    left:0;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+
+    .navClose{
+        display: inline-block;
+        top: 5%;
+        left: 100%;
+        font-size: 2.5rem;
+        padding: 2vw 2vw 2vw 1.3vw;
+        border-bottom-right-radius: 999px;
+        border-top-right-radius: 999px;
+        z-index: 999;
+    }
+    .dashboardNav{
+        transform: translateX(-100%);
+        width: 40vw;
+    }
+
+    .dashboardNav.open{
+        transform: translateX(0);
+    }
+    .dashboardNav.open .navClose span{
+        transform: rotate(180deg);
+    }
+
+    .dashboardNav{
+        width: 25vw;
+    }
+    .menuTitle{
+        font-size: 1.1rem;
+        padding-left: 1vw;
+        margin-top: 6vw;
+    }
+    .navMenu{
+        padding-left: 3.5vw;
+    }
+    
+    .navMenu li{
+        margin: 2vw 0;
+    }
+}
+
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .navClose{
+        display: inline-block;
+        top: 5%;
+        left: 100%;
+        font-size: 2.5rem;
+        padding: 2vw 2vw 2vw 1.3vw;
+        border-bottom-right-radius: 999px;
+        border-top-right-radius: 999px;
+        z-index: 999;
+    }
+    .dashboardNav{
+        transform: translateX(-100%);
+        width: 40vw;
+    }
+
+    .dashboardNav.open{
+        transform: translateX(0);
+    }
+    .dashboardNav.open .navClose span{
+        transform: rotate(180deg);
+    }
+    
+    .navLogo{
+        margin: 2vw 0;
+    }
+    
+    .menuTitle{
+        font-weight: 300;
+        padding-left: 2vw;
+        margin-top: 8vw;
+    }
+    
+    .navMenu{
+        padding-left: 4.5vw;
+    }
+    
+    .navLink{
+        font-size: 1.5rem;
+    }
+    
+    .navMenu li{
+        margin: 4vw 0;
+    }
+    
+    .active::after{
+        left: -4vw;
+    }
+    
+}

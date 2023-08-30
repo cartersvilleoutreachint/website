@@ -1,7 +1,7 @@
+import DashboardOptions from "./components/DashboardOptions/DashboardOptions"
 
-
-export default function DashboardPage() {
+export default function DashboardHomePage() {
   return (
-    <div>Dashboard</div>
+    <DashboardOptions />
   )
 }

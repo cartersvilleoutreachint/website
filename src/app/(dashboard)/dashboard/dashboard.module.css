@@ -1,0 +1,13 @@
+.dashboardContainer{
+    background-color: var(--main-bg-color);
+    min-height: 100vh;
+    padding-left: 15vw;
+    color: var(--main-color);
+}
+
+/* MOBILE/tablet STYLES */
+@media only screen and (max-width: 990px){
+.dashboardContainer{
+    padding-left: 0;
+}
+}

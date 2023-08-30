@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import DashboardNav from './components/DashboardNav/DashboardNav'
+import styles from "./dashboard.module.css"
 
 export const metadata: Metadata = {
-  title: 'Dashboard | COI',
+  title: 'Dashboard | Home',
   description: 'Admin Dashboard',
 }
 
@@ -14,7 +15,9 @@ export default function DashboardLayout({
   return (
     <>
         <DashboardNav />
-        {children}
+        <main className={styles.dashboardContainer}>
+          {children}
+        </main>
     </>
   )
 }
