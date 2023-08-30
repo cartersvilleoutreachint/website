@@ -1,4 +1,3 @@
-import './styles.css'
 import type { Metadata } from 'next'
 import Nav from './components/Nav/Nav'
 import Footer from './components/Footer/Footer'
@@ -8,7 +7,7 @@ export const metadata: Metadata = {
   description: 'The envangelical ministry of Cartersville Outreach, preaching God\'s word internationally.',
 }
 
-export default function EventsLayout({
+export default function MainLayout({
   children,
 }: {
   children: React.ReactNode
