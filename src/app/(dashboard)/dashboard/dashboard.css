@@ -1,0 +1,7 @@
+#dashboardPageTitle{
+    font-family: var(--secondary-font);
+    font-size: 4.5rem;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    padding: 1vw 0;
+}

@@ -7,7 +7,7 @@
 
 /* MOBILE/tablet STYLES */
 @media only screen and (max-width: 990px){
-.dashboardContainer{
-    padding-left: 0;
-}
+    .dashboardContainer{
+        padding-left: 0;
+    }
 }

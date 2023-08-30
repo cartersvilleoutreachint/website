@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import "./dashboard.css"
 import DashboardNav from './components/DashboardNav/DashboardNav'
 import styles from "./dashboard.module.css"
 
