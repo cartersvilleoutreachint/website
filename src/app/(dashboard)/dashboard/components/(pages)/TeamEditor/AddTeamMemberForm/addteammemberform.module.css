@@ -1,0 +1,142 @@
+.formWrapper{
+    display: flex;
+    pointer-events: none;
+    position: fixed;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 0.5s opacity, 0.5s transform;
+}
+
+.form{
+    background-color: #d1e3f4;
+    padding: 2vw;
+    border-radius: 10px;
+    position: relative;
+}
+
+.shader{
+    z-index: -1;
+    transition: 0.5s opacity;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.profileWrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}   
+.profileWrapper *{
+    margin: 0.2vw;
+}
+
+.inputWrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputWrapper textarea, .inputWrapper input{
+    display: inline-block;
+    border: none;
+    border-radius: 999px;
+    padding: 0.3vw 1vw;
+    width: 90%;
+    margin: 0.5vw;
+}
+
+.inputWrapper textarea:focus, .inputWrapper input:not(input[type="submit"]):focus{
+    outline: 2px solid var(--secondary-color);
+}
+
+.inputWrapper textarea{
+    resize: none;
+    border-radius: 10px;
+    height: 3vw;
+}
+
+.form input[type="submit"]{
+    margin-top: 0.5vw;
+    padding: 0.5vw 2vw;
+    cursor: pointer;
+    border: none;
+}
+
+.closeForm{
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    font-weight: bold;
+    position: absolute;
+    top: 0vw;
+    right: 1vw;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .form{
+        padding: 3vw;
+    }  
+    .profileWrapper *{
+        margin: 0.3vw;
+    }
+    
+    .inputWrapper textarea, .inputWrapper input{
+        padding: 0.5vw 1.1vw;
+        width: 90%;
+        margin: 0.8vw;
+    }
+    
+    .inputWrapper textarea{
+        height: 5vw;
+    }
+    
+    .form input[type="submit"]{
+        margin-top: 0.8vw;
+        padding: 0.8vw 2.2vw;
+    }
+    
+    .closeForm{
+        font-size: 3.2rem;
+        right: 1.2vw;
+    }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .form{
+        padding: 5vw;
+    }  
+    .profileWrapper *{
+        margin: 0.5vw;
+    }
+    
+    .inputWrapper textarea, .inputWrapper input{
+        padding: 1vw 2vw;
+        width: 90%;
+        margin: 2vw;
+    }
+    
+    .inputWrapper textarea{
+        height: 10vw;
+    }
+    
+    .form input[type="submit"]{
+        margin-top: 2vw;
+        padding: 2vw 5vw;
+    }
+    
+    .closeForm{
+        font-size: 3.2rem;
+        right: 1.2vw;
+    }
+}
