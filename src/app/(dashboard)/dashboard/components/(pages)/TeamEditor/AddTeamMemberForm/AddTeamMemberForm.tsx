@@ -48,7 +48,7 @@ export default function AddTeamMemberForm() {
         <div className="center">
           <input type="submit" className="main-button" value="Add Member" />
         </div>
-        <button onClick={closeForm} className={styles.closeForm}>&times;</button>
+        <button onClick={(evt)=>{evt.preventDefault(); closeForm()}} className={styles.closeForm}>&times;</button>
       </form>
       
       <div
