@@ -1,0 +1,12 @@
+.buttonWrapper button{
+    margin: 0.5vw;
+    border: none;
+    cursor: pointer;
+}
+
+.deleteButton{
+    background-color: #CB2323;
+}
+.deleteButton:hover{
+    background-color: #a81f1f;
+}

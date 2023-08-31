@@ -1,10 +1,13 @@
-import { Metadata } from "next";
-export const metadata: Metadata = {
-    title: "Dashboard | Events"
-}
+import { Suspense } from "react"
+import Loading from "@/app/(mainsite)/components/Misc/Loading/Loading"
+import DashboardEvents from "../../components/(pages)/Events/DashboardEvents"
 
 export default function DashboardEventsPage(){
     return(
-        <div>Events</div>
+        <>
+        <Suspense fallback={<Loading/>}>
+            <DashboardEvents search="default" />
+        </Suspense>
+        </>
     )
 }

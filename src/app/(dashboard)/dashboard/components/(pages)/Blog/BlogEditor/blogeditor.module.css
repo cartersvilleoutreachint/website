@@ -17,11 +17,12 @@
 .form{
     position: relative;
     background-color: #d1e3f4;
-    padding: 2vw;
+    padding: 1vw;
     z-index: 810;
     width: 50vw;
     display: inline-flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 .headerWrapper{

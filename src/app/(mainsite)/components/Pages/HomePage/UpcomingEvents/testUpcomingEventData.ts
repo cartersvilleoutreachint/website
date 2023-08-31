@@ -1,11 +1,4 @@
-interface eventType{
-    title: string,
-    date: number,
-    location: string,
-    locationUrl: string,
-    moreInfoUrl: string,
-    shortDesc: string
-}
+
 
 const testUpcomingEventsData: eventType[] = [
     {

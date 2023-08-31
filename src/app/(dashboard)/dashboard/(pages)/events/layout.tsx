@@ -2,10 +2,10 @@ import { Metadata } from "next"
 import SearchBar from "@/app/(mainsite)/components/Misc/SearchBar/SearchBar"
 
 export const metadata: Metadata = {
-  title: "Dashboard | Blog"
+  title: "Dashboard | Events"
 }
 
-export default function BlogLayout({
+export default function EventsLayout({
     children,
   }: {
     children: React.ReactNode
@@ -13,8 +13,8 @@ export default function BlogLayout({
     return (
         
       <>
-        <h1 id="dashboardPageTitle">Blog</h1>
-        <SearchBar targetPageUrl="/dashboard/blog" />
+        <h1 id="dashboardPageTitle">Events</h1>
+        <SearchBar targetPageUrl="/dashboard/events" />
         {children}
       </>
        

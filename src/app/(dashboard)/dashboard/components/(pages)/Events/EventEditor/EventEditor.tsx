@@ -1,13 +1,13 @@
 "use client"
 
-import styles from "./blogeditor.module.css"
+import styles from "../../Blog/BlogEditor/blogeditor.module.css"
 import styles2 from "../../../editor.module.css"
 import styles3 from "../../../additem.module.css"
 import Image from "next/image"
 import TextEditor from "../../../TextEditor/TextEditor"
 import { useState, useRef, useEffect } from "react"
 
-export default function BlogEditor() {
+export default function EventEditor() {
 
     const editorRef: any = useRef()
     const wrapperRef: any = useRef()
@@ -15,8 +15,13 @@ export default function BlogEditor() {
 
     const [contentChanged, setContentChanged] = useState(false)
     const [imageIsUploading, setImageIsUploading] = useState(false)
-    const [currentImg, setCurrentImg] = useState("/img/media/mediapic1.png")
+
+    const [currentImg, setCurrentImg] = useState("/img/blank.png")
     const [currentTitle, setCurrentTitle] = useState("")
+    const [currentDesc, setCurrentDesc] = useState("")
+    const [currentLocation, setCurrentLocation] = useState("")
+    const [currentDate, setCurrentDate] = useState((new Date().getTime()))
+
 
     function handleSubmit(evt: any){
         evt.preventDefault()
@@ -34,6 +39,12 @@ export default function BlogEditor() {
         wrapperRef.current.style.transform = "translateY(-20px)";
       }
 
+      function getInputTime(date: number | string): string{
+        const newDate = new Date(date);
+        newDate.setMinutes(newDate.getMinutes() - newDate.getTimezoneOffset())
+      return newDate.toISOString().slice(0,16)
+      }
+      
 
   return (
     <div id="formWrapper" ref={wrapperRef} className={styles.wrapper}>
@@ -45,10 +56,21 @@ export default function BlogEditor() {
                 <div className={`${styles2.profileTitle} ${styles.photoTitle}`}>Cover Photo:</div>
                 <label htmlFor="photoInput" className={`${styles2.photoInput} ${styles.photoInput}`}>Choose File</label>
             </div>
+            <div className={`${styles.titleWrapper} ${styles2.titleWrapper}`}>
+            <textarea required placeholder="Short Description of the event" defaultValue={currentDesc} name="descInput" id="descInput" className={styles.titleInput}></textarea>
+            </div>
         </div>
         <div className={`${styles2.inputWrapper} ${styles.inputWrapper}`}>
             <div className={styles.titleWrapper}>
-            <span className={styles.inputTitle}>Title:</span><input placeholder="Blog Title" defaultValue={currentTitle} type="text" name="titleInput" id="titleInput" className={styles.titleInput} />
+            <span className={styles.inputTitle}>Title:</span><input required placeholder="Event Title" defaultValue={currentTitle} type="text" name="titleInput" id="titleInput" className={styles.titleInput} />
+            </div>
+
+            <div className={styles.titleWrapper}>
+            <span className={styles.inputTitle}>Location:</span><input required placeholder="Event Location" defaultValue={currentLocation} type="text" name="locationInput" id="locationInput" className={styles.titleInput} />
+            </div>
+
+            <div className={styles.titleWrapper}>
+            <span className={styles.inputTitle}>Date/Time:</span><input required placeholder="Event Date/Time" defaultValue={getInputTime(currentDate)} type="datetime-local" name="dateInput" id="dateInput" className={styles.titleInput} />
             </div>
             <div className={`center ${styles.buttonWrapper}`}>
                 

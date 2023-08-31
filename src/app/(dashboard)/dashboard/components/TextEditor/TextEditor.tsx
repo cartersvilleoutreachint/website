@@ -6,7 +6,7 @@ import { fromBlob } from "image-resize-compress"
 interface proptype{
     editorRef: any,
     setImageIsUploading: any,
-    setEditorContent: any
+    setContentChanged: any
 }
 export default function TextEditor(props: proptype) {
 
@@ -31,7 +31,7 @@ export default function TextEditor(props: proptype) {
         props.editorRef.current = editor
     }}
     onKeyUp={()=>{
-        props.setEditorContent(props.editorRef.current.getContent())
+        props.setContentChanged(true)
     }}
     init={{
     width:"100%",

@@ -4,6 +4,15 @@ type mediaType = {
     link: string
 }
 
+type eventType = {
+  title: string,
+  date: number,
+  location: string,
+  locationUrl: string,
+  moreInfoUrl: string,
+  shortDesc: string
+}
+
 type teamMemberType = {
     imgSrc: string,
     description: string,
