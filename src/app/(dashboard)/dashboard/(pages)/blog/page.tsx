@@ -1,10 +1,13 @@
-import { Metadata } from "next";
-export const metadata: Metadata = {
-    title: "Dashboard | Blog"
-}
+import { Suspense } from "react"
+import Loading from "@/app/(mainsite)/components/Misc/Loading/Loading"
+import DashboardBlogList from "../../components/(pages)/Blog/DashboardBlogList"
 
 export default function DashboardBlogPage(){
     return(
-        <div>BLOG</div>
+        <>
+        <Suspense fallback={<Loading/>}>
+            <DashboardBlogList search="default" />
+        </Suspense>
+        </>
     )
 }

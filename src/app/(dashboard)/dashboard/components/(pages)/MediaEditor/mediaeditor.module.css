@@ -1,0 +1,21 @@
+.coverImg{
+    width: 9vw;
+    height: 5vw;
+    border-radius: 0;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .coverImg{
+        width: 14vw;
+        height: 8vw;
+    }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .coverImg{
+        width: 25vw;
+        height: 14vw;
+    }
+}

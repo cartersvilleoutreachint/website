@@ -1,10 +1,15 @@
 import { Metadata } from "next";
+import MediaEditors from "../../components/(pages)/MediaEditor/MediaEditors";
+
 export const metadata: Metadata = {
     title: "Dashboard | Media"
 }
 
 export default function DashboardMediaPage(){
     return(
-        <div>Media</div>
+        <>
+         <h1 id="dashboardPageTitle">Media</h1>
+         <MediaEditors />
+        </>
     )
 }

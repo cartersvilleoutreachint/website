@@ -1,13 +1,12 @@
-"use client"
-
 import { useState, useRef } from "react";
-import styles from "../../../additem.module.css"
-import styles2 from "../../../editor.module.css"
+import styles from "../../additem.module.css"
+import styles2 from "../../editor.module.css"
+import styles3 from "./mediaeditor.module.css"
 import Image from "next/image";
 
-export default function AddTeamMemberForm() {
+export default function AddMedia() {
 
-  const [currentImg, setCurrentImg] = useState("/img/blank-profile.jpg");
+  const [currentImg, setCurrentImg] = useState("/img/media/mediapic1.png");
   const [formIsActive, setFormIsActive] = useState(false)
   const shaderRef: any = useRef();
   const wrapperRef: any = useRef();
@@ -34,19 +33,18 @@ export default function AddTeamMemberForm() {
     <aside id="formWrapper" ref={wrapperRef} className={`center ${styles.formWrapper}`}>
       <form className={styles.form} onSubmit={formSubmitHandler}>
       <div className={styles.profileWrapper}>
-            <Image className={styles.profileImg} height={100} width={100} src={currentImg} alt="Profile Image" />
-            <div className={styles.profileTitle}>Profile Photo</div>
+            <Image className={`${styles.profileImg} ${styles3.coverImg}`} height={100} width={200} src={currentImg} alt="Cover Image" />
+            <div className={styles.profileTitle}>Cover Photo</div>
             <label htmlFor="photoInput" className={styles2.photoInput}>Choose File</label>
             <input type="file" name="photoInput" id="photoInput" style={{display: "none"}}  />
         </div>
 
         <div className={styles.inputWrapper}>
-            <input required placeholder="Name" type="text" name="nameInput" id="nameInput" className={styles.nameInput} />
-            <input required placeholder="Role" type="text" name="roleInput" id="roleInput" className={styles.roleInput} />
-            <textarea required placeholder="Description" name="descInput" id="descInput" className={styles.descInput}></textarea>
+            <input required placeholder="Title" type="text" name="titleInput" id="titleInput" className={styles.nameInput} />
+            <input required placeholder="Link" type="text" name="linkInput" id="linkInput" className={styles.roleInput} />
         </div>
         <div className="center">
-          <input type="submit" className="main-button" value="Add Member" />
+          <input type="submit" className="main-button" value="Add Media" />
         </div>
         <button onClick={(evt)=>{evt.preventDefault(); closeForm()}} className={styles.closeForm}>&times;</button>
       </form>

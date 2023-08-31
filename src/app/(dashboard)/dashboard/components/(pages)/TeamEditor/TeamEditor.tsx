@@ -1,6 +1,6 @@
 "use client"
 
-import styles from "./teameditor.module.css"
+import styles from "../../editor.module.css"
 import getTeamMembers from "@/app/(mainsite)/components/Pages/OurTeam/TeamMembers/getTeamMembers"
 import TeamMemberEditor from "./TeamMemberEditor"
 import AddTeamMemberForm from "./AddTeamMemberForm/AddTeamMemberForm"

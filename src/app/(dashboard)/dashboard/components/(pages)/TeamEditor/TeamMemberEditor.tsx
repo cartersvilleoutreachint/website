@@ -1,19 +1,12 @@
-import styles from "./teameditor.module.css"
+import styles from "../../editor.module.css"
 import Image from "next/image"
-
-interface teamMemberType{
-    imgSrc: string,
-    description: string,
-    role: string,
-    name: string
-}
 
 export default function TeamMemberEditor(props: teamMemberType) {
   return (
     <aside className={styles.teamMemberEditor}>
-        <div className={styles.reorder}>
-            <button className={styles.reorderUp}></button>
-            <button className={styles.reorderDown}></button>
+        <div className="dashboard-reorder">
+            <button className="dashboard-reorder-up"></button>
+            <button className="dashboard-reorder-down"></button>
         </div>
 
         <div className={styles.profileWrapper}>

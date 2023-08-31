@@ -1,0 +1,23 @@
+.blogList{
+    padding-bottom: 4vw;
+    z-index: 0;
+}
+
+.editButton, .deleteButton{
+    cursor: pointer;
+    margin: 0 0.3vw;
+    border: none;
+    padding: 0.3vw 3vw;
+}
+
+.deleteButton{
+    background-color: #CB2323;
+}
+
+.deleteButton:hover{
+    background-color: #8a1515;
+}
+
+.editorBox{
+    z-index: 0;
+}

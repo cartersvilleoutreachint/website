@@ -5,3 +5,57 @@
     letter-spacing: 0.2rem;
     padding: 1vw 0;
 }
+
+.dashboard-reorder{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.5));
+    z-index: 0;
+    position: relative;
+}
+
+.dashboard-reorder button{
+    cursor: pointer;
+    width: 3vw;
+    height: 3vw;
+    background-color: var(--main-text-color);
+    background-size: 100%;
+    background-position: center;
+    transition: 0.3s background-color;
+    
+}
+.dashboard-reorder button:hover{
+    background-color: #e9e9e9;
+}
+
+.dashboard-reorder-up{
+    border: none;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    background-image: url("/img/chevron-up.svg");
+    border-bottom: 1px solid #ccc;
+}
+.dashboard-reorder-down{
+    border: none;
+    border-bottom-left-radius: 999px;
+    border-bottom-right-radius: 999px;
+    background-image: url("/img/chevron-down.svg");
+    border-top: 1px solid #ccc;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .dashboard-reorder button{
+        width: 5vw;
+        height: 5vw;
+    }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .dashboard-reorder button{
+        width: 8vw;
+        height: 8vw;
+    }
+}
