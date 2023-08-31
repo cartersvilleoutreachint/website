@@ -154,6 +154,14 @@
     filter: brightness(80%);
 }
 
+/* SMALL LAPTOP STYLES */
+@media only screen and (min-width: 991px) and (max-width: 1400px){
+    .wrapper{
+        width: 50vw;
+    }
+}
+
+
 /* TABLET STYLES */
 @media only screen and (min-width: 650px) and (max-width: 990px){
     .wrapper{
