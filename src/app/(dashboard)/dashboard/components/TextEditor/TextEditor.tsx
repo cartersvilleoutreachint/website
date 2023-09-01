@@ -6,7 +6,8 @@ import { fromBlob } from "image-resize-compress"
 interface proptype{
     editorRef: any,
     setImageIsUploading: any,
-    setContentChanged: any
+    setContentChanged: any,
+    currentContent: string
 }
 export default function TextEditor(props: proptype) {
 
@@ -21,12 +22,12 @@ export default function TextEditor(props: proptype) {
         const compressRes = await fromBlob(image, curSettings.quality, curSettings.width, curSettings.height, curSettings.format);
         return compressRes;
     }
-
   return (
     <>
     <Editor
     id="textEditor"
-    apiKey="e8r7xtdoickats8a69nsasyfo0mpg3ng3qiow2srqjlm8rge"
+    initialValue={props.currentContent}
+    apiKey={process.env.NEXT_PUBLIC_TINYMCE_API_KEY}
     onInit={(evt, editor)=>{
         props.editorRef.current = editor
     }}
@@ -62,7 +63,7 @@ export default function TextEditor(props: proptype) {
                         method: "POST",
                         headers: {
                              /* ********  PUT IMGUR CLIENT ID HERE  ********* */
-                                "Authorization": "Client-ID 0aff8a7c443cfd3"
+                                "Authorization": `Client-ID ${process.env.NEXT_PUBLIC_IMGUR_CLIENT_ID}`
                         },
                         body: formData
                     }).then((res)=>res.json()).then((data)=>{

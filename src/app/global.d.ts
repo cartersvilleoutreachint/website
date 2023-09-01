@@ -21,15 +21,35 @@ type teamMemberType = {
 }
 
 type blogType = {
-    id: number,
+    id: string,
     imgSrc: string,
     title: string,
     date: number,
-    articleUrl: string
+    url: string
+  }
+
+  type newBlogType = {
+    metadata: {
+      imgSrc: string,
+      title: string,
+      date: number,
+      url: string
+    }
+    content: string
+  }
+  type updateBlogType = {
+    metadata?:{
+      imgSrc?: string,
+      title?: string,
+      date?: number,
+      imgSrc?: string
+    }
+    id: string,
+    content?: string
   }
 
   type fullBlogType = {
-    id: number,
+    id: string,
     content: string,
     imgSrc: string,
     title: string,

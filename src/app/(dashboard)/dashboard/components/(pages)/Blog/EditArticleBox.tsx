@@ -2,9 +2,14 @@ import styles from "@/app/(mainsite)/components/ArticleBox/articlebox.module.css
 import styles2 from "./dashboardblog.module.css"
 import Image from "next/image"
 import getSlashedDate from "@/app/(mainsite)/components/utils/getSlashedDate"
+import deleteBlog from "@/app/controllers/deleteBlog"
 
+interface articleBoxProps extends blogType{
+  setCurrentBlogId: any,
+  setReloadPage: any
+}
 
-export default function EditArticleBox(props: blogType) {
+export default function EditArticleBox(props: articleBoxProps) {
 
   function openForm(){
     document.getElementById("formShader")!.style.pointerEvents = "auto"
@@ -15,7 +20,8 @@ export default function EditArticleBox(props: blogType) {
   }
 
   function handleEditClick(){
-    openForm()
+    props.setCurrentBlogId(props.id)
+    openForm();
   }
 
   return (
@@ -27,7 +33,11 @@ export default function EditArticleBox(props: blogType) {
       </div>
       <div className="center">
         <button onClick={handleEditClick} className={`${styles2.editButton} main-button`}>Edit</button>
-        <button className={`${styles2.deleteButton} main-button`}>Delete</button>
+        <button onClick={async ()=>{
+            await deleteBlog(props.id);
+            props.setReloadPage((old: boolean)=>!old)}}
+            className={`${styles2.deleteButton} main-button`}>
+          Delete</button>
       </div>
     </aside>
   )
