@@ -2,6 +2,8 @@ import styles from "./dashboardoptions.module.css"
 import DashboardOption from "./DashboardOption"
 
 export default function DashboardOptions() {
+
+
   return (
     <>
         <h1 className={styles.pageTitle}>Admin Panel</h1>

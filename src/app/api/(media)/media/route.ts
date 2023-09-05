@@ -1,8 +1,15 @@
 import clientPromise from "../../../lib/mongodb"
 import { NextResponse } from "next/server"
 import typeChecker from "../../../lib/runtimeTypeChecker"
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 export async function POST(req: Request){
+
+    const {isAuthenticated} = getKindeServerSession();
+    if(!isAuthenticated()){
+        return NextResponse.json({error: "Unauthorized"}, {status: 401})
+    }
+
     const newMediaTemplate = {
        imgSrc: "string",
        title: "string",

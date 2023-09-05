@@ -2,6 +2,7 @@ import clientPromise from "@/app/lib/mongodb"
 import { NextResponse } from "next/server"
 import typeChecker from "../../../../lib/runtimeTypeChecker"
 import {ObjectId} from "mongodb"
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
 
 export async function GET(req: Request, {params}: {params: { id: string}}){
     try{
@@ -18,6 +19,11 @@ export async function GET(req: Request, {params}: {params: { id: string}}){
 }
 
 export async function PUT(req: Request, {params}: {params: { id: string}}){
+
+    const {isAuthenticated} = getKindeServerSession();
+    if(!isAuthenticated()){
+        return NextResponse.json({error: "Unauthorized"}, {status: 401})
+    }
 
     const updateEventTemplate = {
        "content?":" string",
@@ -51,6 +57,12 @@ export async function PUT(req: Request, {params}: {params: { id: string}}){
 }
 
 export async function DELETE(req: Request, {params}: {params: { id: string}}){
+    
+    const {isAuthenticated} = getKindeServerSession();
+    if(!isAuthenticated()){
+        return NextResponse.json({error: "Unauthorized"}, {status: 401})
+    }
+
     try{
         const client = await clientPromise
         const db = client.db("cartersvilleoutint")

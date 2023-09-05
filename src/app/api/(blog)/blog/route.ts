@@ -1,8 +1,14 @@
 import clientPromise from "@/app/lib/mongodb"
 import { NextResponse } from "next/server"
 import typeChecker from "../../../lib/runtimeTypeChecker"
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
 
 export async function POST(req: Request){
+    const {getUser, isAuthenticated} = getKindeServerSession();
+
+    if(isAuthenticated()){
+
+    
     const newBlogTemplate = {
         metadata: {
             title: "string",
@@ -31,4 +37,7 @@ export async function POST(req: Request){
     }else{
         return NextResponse.json({error: "error"}, {status: 500})
     }
+}else{
+    return NextResponse.json({error: "Unauthorized"}, {status: 401})
+}
 }

@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react"
 import styles from "./dashboardnav.module.css"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/server"
 
 export default function DashboardNav() {
 const pathname = usePathname();
@@ -55,6 +56,9 @@ useEffect(()=>{
               <Link onClick={(isOnMobile) ? closeMobileNav : undefined} className={styles.navLink} href="/dashboard/team">Team</Link>
             </li>
         </menu>
+
+      <a href="/api/auth/logout" className={styles.logoutLink}>Logout</a>
+
         <button
         className={styles.navClose}
         onClick={(isOnMobile) ? toggleMobileNav : undefined}

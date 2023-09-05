@@ -79,9 +79,31 @@
     left:0;
 }
 
+.logoutLink{
+    position: absolute;
+    bottom: 2.5vw;
+    width: 90%;
+    margin-left: 5%;
+    text-decoration: none;
+    color: var(--main-text-color);
+    background-color: #4F4F4F;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.5vw 0;
+    border-radius: 999px;
+    transition: 0.3s background-color;
+}
+
+.logoutLink:hover{
+    background-color: #3b3b3b;
+}
+
 /* TABLET STYLES */
 @media only screen and (min-width: 650px) and (max-width: 990px){
-
+    .logoutLink{
+        bottom: 5vw;
+        font-size: 1.3rem;
+    }
     .navClose{
         display: inline-block;
         top: 5%;
@@ -124,6 +146,10 @@
  
 /* MOBILE STYLES */
 @media only screen and (max-width: 649px){
+    .logoutLink{
+        bottom: 5vw;
+        font-size: 1.5rem;
+    }
     .navClose{
         display: inline-block;
         top: 5%;
