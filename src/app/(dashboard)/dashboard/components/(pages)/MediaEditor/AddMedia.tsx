@@ -3,6 +3,7 @@ import styles from "../../additem.module.css"
 import styles2 from "../../editor.module.css"
 import styles3 from "./mediaeditor.module.css"
 import Image from "next/image";
+import fileUploadHandler from "@/app/lib/fileuploadhandler";
 
 export default function AddMedia() {
 
@@ -36,7 +37,10 @@ export default function AddMedia() {
             <Image className={`${styles.profileImg} ${styles3.coverImg}`} height={100} width={200} src={currentImg} alt="Cover Image" />
             <div className={styles.profileTitle}>Cover Photo</div>
             <label htmlFor="photoInput" className={styles2.photoInput}>Choose File</label>
-            <input type="file" name="photoInput" id="photoInput" style={{display: "none"}}  />
+            <input onChange={async (evt)=>{
+              const imgLink = await fileUploadHandler(evt);
+              setCurrentImg(imgLink)
+            }} type="file" name="photoInput" id="photoInput" style={{display: "none"}}  />
         </div>
 
         <div className={styles.inputWrapper}>

@@ -7,6 +7,7 @@ import Image from "next/image"
 import TextEditor from "../../../TextEditor/TextEditor"
 import createBlog from "@/app/controllers/createBlog"
 import { useState, useRef, useEffect } from "react"
+import fileUploadHandler from "@/app/lib/fileuploadhandler"
 
 export default function BlogEditor(props: {currentBlogId: string, setReloadPage: any}) {
 
@@ -108,7 +109,10 @@ export default function BlogEditor(props: {currentBlogId: string, setReloadPage:
         setImageIsUploading={setImageIsUploading}
         />
     </div>
-        <input type="file" name="photoInput" id="photoInput" style={{display: "none"}}  />
+        <input onChange={async (evt)=>{
+              const imgLink = await fileUploadHandler(evt);
+              setCurrentImg(imgLink)
+            }} type="file" name="photoInput" id="photoInput" style={{display: "none"}}  />
         <button onClick={(evt)=>{evt.preventDefault(); closeForm()}} className={styles3.closeForm}>&times;</button>
         </form>
         <div  id="formShader" ref={shaderRef} className={`shader ${styles.shader}`}></div>

@@ -6,6 +6,7 @@ import styles3 from "../../../additem.module.css"
 import Image from "next/image"
 import TextEditor from "../../../TextEditor/TextEditor"
 import { useState, useRef, useEffect } from "react"
+import fileUploadHandler from "@/app/lib/fileuploadhandler"
 
 export default function EventEditor() {
 
@@ -93,7 +94,10 @@ export default function EventEditor() {
         setImageIsUploading={setImageIsUploading}
         />
     </div>
-        <input type="file" name="photoInput" id="photoInput" style={{display: "none"}}  />
+        <input onChange={async (evt)=>{
+              const imgLink = await fileUploadHandler(evt);
+              setCurrentImg(imgLink)
+            }} type="file" name="photoInput" id="photoInput" style={{display: "none"}}  />
         <button onClick={(evt)=>{evt.preventDefault(); closeForm()}} className={styles3.closeForm}>&times;</button>
         </form>
         <div  id="formShader" ref={shaderRef} className={`shader ${styles.shader}`}></div>

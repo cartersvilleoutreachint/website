@@ -1,7 +1,7 @@
 "use client"
 
 import { Editor } from "@tinymce/tinymce-react"
-import { fromBlob } from "image-resize-compress"
+import compressImage from "@/app/lib/compressimage"
 
 interface proptype{
     editorRef: any,
@@ -11,17 +11,7 @@ interface proptype{
 }
 export default function TextEditor(props: proptype) {
 
-    async function compressImage(image: any, settings: any){
-        const curSettings = {
-            quality: 80,
-            width: "auto",
-            height: "auto",
-            format: "jpg",
-            ...settings
-        }
-        const compressRes = await fromBlob(image, curSettings.quality, curSettings.width, curSettings.height, curSettings.format);
-        return compressRes;
-    }
+    
   return (
     <>
     <Editor

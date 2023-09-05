@@ -2,6 +2,7 @@ import styles from "../../editor.module.css"
 import Image from "next/image"
 
 export default function TeamMemberEditor(props: teamMemberType) {
+
   return (
     <aside className={styles.teamMemberEditor}>
         <div className="dashboard-reorder">

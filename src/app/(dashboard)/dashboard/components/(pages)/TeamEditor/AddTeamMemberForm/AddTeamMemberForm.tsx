@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import styles from "../../../additem.module.css"
 import styles2 from "../../../editor.module.css"
 import Image from "next/image";
+import fileUploadHandler from "@/app/lib/fileuploadhandler";
 
 export default function AddTeamMemberForm() {
 
@@ -15,6 +16,7 @@ export default function AddTeamMemberForm() {
   function formSubmitHandler(evt: any){
     evt.preventDefault();
   }
+
 
  
 
@@ -37,7 +39,10 @@ export default function AddTeamMemberForm() {
             <Image className={styles.profileImg} height={100} width={100} src={currentImg} alt="Profile Image" />
             <div className={styles.profileTitle}>Profile Photo</div>
             <label htmlFor="photoInput" className={styles2.photoInput}>Choose File</label>
-            <input type="file" name="photoInput" id="photoInput" style={{display: "none"}}  />
+            <input onChange={async (evt)=>{
+              const imgLink = await fileUploadHandler(evt);
+              setCurrentImg(imgLink)
+            }} type="file" name="photoInput" id="photoInput" style={{display: "none"}}  />
         </div>
 
         <div className={styles.inputWrapper}>
