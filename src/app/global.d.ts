@@ -56,3 +56,32 @@ type blogType = {
     date: number,
     articleUrl: string
   }
+
+  type newEventType = {
+    id: string,
+    content: string,
+    title: string,
+    location: string,
+    locationUrl: string,
+    date: number,
+    shortDesc: string
+  }
+
+  type eventMetaType = {
+    _id: string,
+    title: string,
+    location: string,
+    locationUrl: string,
+    date: number,
+    shortDesc: string
+  }
+
+  type updateEventType = {
+    id: string,
+    content?: string,
+    title?: string,
+    location?: string,
+    locationUrl?: string,
+    date?: number,
+    shortDesc?: string
+  }

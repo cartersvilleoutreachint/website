@@ -20,6 +20,8 @@ export default function EventEditor() {
     const [currentTitle, setCurrentTitle] = useState("")
     const [currentDesc, setCurrentDesc] = useState("")
     const [currentLocation, setCurrentLocation] = useState("")
+    const [currentLocationUrl, setCurrentLocationUrl] = useState("")
+    const [currentContent, setCurrentContent] = useState("")
     const [currentDate, setCurrentDate] = useState((new Date().getTime()))
 
 
@@ -66,9 +68,12 @@ export default function EventEditor() {
             </div>
 
             <div className={styles.titleWrapper}>
-            <span className={styles.inputTitle}>Location:</span><input required placeholder="Event Location" defaultValue={currentLocation} type="text" name="locationInput" id="locationInput" className={styles.titleInput} />
+            <span className={styles.inputTitle}>Location Url:</span><input required placeholder="Event Location Url" defaultValue={currentLocationUrl} type="text" name="locationUrlInput" id="locationUrlInput" className={styles.titleInput} />
             </div>
 
+            <div className={styles.titleWrapper}>
+            <span className={styles.inputTitle}>Location:</span><input required placeholder="Event Location" defaultValue={currentLocation} type="text" name="locationInput" id="locationInput" className={styles.titleInput} />
+            </div>
             <div className={styles.titleWrapper}>
             <span className={styles.inputTitle}>Date/Time:</span><input required placeholder="Event Date/Time" defaultValue={getInputTime(currentDate)} type="datetime-local" name="dateInput" id="dateInput" className={styles.titleInput} />
             </div>
@@ -82,6 +87,7 @@ export default function EventEditor() {
     </div>
     <div className={styles.textEditorWrapper}>
         <TextEditor
+        currentContent={currentContent}
         setContentChanged={setContentChanged}
         editorRef={editorRef}
         setImageIsUploading={setImageIsUploading}
