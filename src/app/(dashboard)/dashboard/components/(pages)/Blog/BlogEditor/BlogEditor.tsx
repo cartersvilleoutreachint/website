@@ -5,7 +5,7 @@ import styles2 from "../../../editor.module.css"
 import styles3 from "../../../additem.module.css"
 import Image from "next/image"
 import TextEditor from "../../../TextEditor/TextEditor"
-import createBlog from "@/app/controllers/createBlog"
+import createBlog from "@/app/controllers/blog/createBlog"
 import { useState, useRef, useEffect } from "react"
 import fileUploadHandler from "@/app/lib/fileuploadhandler"
 

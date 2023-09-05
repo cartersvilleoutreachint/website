@@ -2,7 +2,7 @@ import styles from "@/app/(mainsite)/components/ArticleBox/articlebox.module.css
 import styles2 from "./dashboardblog.module.css"
 import Image from "next/image"
 import getSlashedDate from "@/app/(mainsite)/components/utils/getSlashedDate"
-import deleteBlog from "@/app/controllers/deleteBlog"
+import deleteBlog from "@/app/controllers/blog/deleteBlog"
 
 interface articleBoxProps extends blogType{
   setCurrentBlogId: any,

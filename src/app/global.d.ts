@@ -4,6 +4,12 @@ type mediaType = {
     link: string
 }
 
+type updateMediaType = {
+  imageSrc?: string,
+  title?: string,
+  link?: string
+}
+
 type eventType = {
   title: string,
   date: number,
@@ -18,6 +24,13 @@ type teamMemberType = {
     description: string,
     role: string,
     name: string
+}
+
+type updateTeamMemberType = {
+  imgSrc?: string,
+  description?: string,
+  role?: string,
+  name?: string
 }
 
 type blogType = {
@@ -44,7 +57,6 @@ type blogType = {
       date?: number,
       imgSrc?: string
     }
-    id: string,
     content?: string
   }
 
@@ -77,7 +89,6 @@ type blogType = {
   }
 
   type updateEventType = {
-    id: string,
     content?: string,
     title?: string,
     location?: string,
