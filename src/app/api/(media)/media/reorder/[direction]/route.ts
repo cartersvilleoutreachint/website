@@ -13,7 +13,7 @@ export async function POST(req: Request, {params}: {params: { direction: string}
     
     const bodyData = await req.json()
 
-    if(typeChecker(bodyData, {"curOrderNum": "number"})){
+    if(typeChecker(bodyData, {"_id": "string"})){
     switch((params.direction).trim().toLowerCase()){
         case "up":
             return reorderUp()
@@ -34,14 +34,15 @@ export async function POST(req: Request, {params}: {params: { direction: string}
         try{
             const client = await clientPromise
             const db = client.db("cartersvilleoutint")
+            const primary = await db.collection("media").findOne({_id: new ObjectId(bodyData._id)})
             const secondary = await db.collection("media")
-            .find({order: (bodyData.curOrderNum - 1)}).toArray()
+            .find({order: (primary!.order - 1)}).toArray()
             if(secondary.length > 0){
                 await db.collection("media")
-                .updateOne({order: bodyData.curOrderNum}, {$set: {order: (bodyData.curOrderNum - 1)}})
+                .updateOne({_id: new ObjectId(bodyData._id)}, {$set: {order: (primary!.order - 1)}})
 
                 await db.collection("media")
-                .updateOne({_id: new ObjectId(secondary[0]._id)}, {$set: {order: bodyData.curOrderNum}})
+                .updateOne({_id: new ObjectId(secondary[0]._id)}, {$set: {order: primary!.order}})
             }
             
             return NextResponse.json({"status": "Success"}, {status: 200})
@@ -55,14 +56,15 @@ export async function POST(req: Request, {params}: {params: { direction: string}
         try{
             const client = await clientPromise
             const db = client.db("cartersvilleoutint")
+            const primary = await db.collection("media").findOne({_id: new ObjectId(bodyData._id)})
             const secondary = await db.collection("media")
-            .find({order: (bodyData.curOrderNum + 1)}).toArray()
+            .find({order: (primary!.order + 1)}).toArray()
             if(secondary.length > 0){
                 await db.collection("media")
-                .updateOne({order: bodyData.curOrderNum}, {$set: {order: (bodyData.curOrderNum + 1)}})
+                .updateOne({_id: new ObjectId(bodyData._id)}, {$set: {order: (primary!.order + 1)}})
 
                 await db.collection("media")
-                .updateOne({_id: new ObjectId(secondary[0]._id)}, {$set: {order: bodyData.curOrderNum}})
+                .updateOne({_id: new ObjectId(secondary[0]._id)}, {$set: {order: primary!.order}})
             }
             
             return NextResponse.json({"status": "Success"}, {status: 200})

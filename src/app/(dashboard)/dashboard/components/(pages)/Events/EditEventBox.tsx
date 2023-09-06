@@ -2,8 +2,13 @@ import getFormattedTime from "@/app/(mainsite)/components/utils/getFormattedTime
 import styles from "./dashboardevents.module.css"
 import Image from "next/image";
 import styles2 from "@/app/(mainsite)/components/Pages/HomePage/UpcomingEvents/upcomingevents.module.css"
+import deleteEvent from "@/app/controllers/events/deleteEvent";
 
-export default function EditEventBox(props: eventType) {
+interface eventBoxType extends eventType{
+  _id: string,
+  setCurrentEventId: any
+}
+export default function EditEventBox(props: eventBoxType) {
 
   function openForm(){
     document.getElementById("formShader")!.style.pointerEvents = "auto"
@@ -26,8 +31,11 @@ export default function EditEventBox(props: eventType) {
         </div>
         <p className={styles2.shortDesc}>{props.shortDesc}</p>
         <div className={`${styles.buttonWrapper} center`}>
-            <button onClick={openForm} className={`${styles.editButton} main-button`}>Edit</button>
-            <button className={`${styles.deleteButton} main-button`}>Delete</button>
+            <button onClick={()=>{
+              props.setCurrentEventId(props._id)
+              openForm()
+            }} className={`${styles.editButton} main-button`}>Edit</button>
+            <button onClick={()=>{deleteEvent(props._id)}} className={`${styles.deleteButton} main-button`}>Delete</button>
         </div>
       </aside>
   )

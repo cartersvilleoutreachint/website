@@ -2,27 +2,28 @@
 
 import EventEditor from "./EventEditor/EventEditor"
 import EditEventBox from "./EditEventBox"
-import testUpcomingEventsData from "@/app/(mainsite)/components/Pages/HomePage/UpcomingEvents/testUpcomingEventData"
+import getEvents from "@/app/controllers/events/getEvents"
 import styles2 from "@/app/(mainsite)/components/Pages/Blog/Blog/blog.module.css"
 import styles3 from "../../editor.module.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Pagination from "@/app/(mainsite)/components/Vendor/Pagination/Pagination"
+
 
 export default function DashboardEvents(props: {search: string}) {
 
-    if(props.search == "default"){
-        // Default Data
 
-    }else{
-        // Search data
 
-    }
+    const [eventsData, setEventsData] = useState([])
+    const [currentEventId, setCurrentEventId] = useState("")
 
-    const posts = testUpcomingEventsData.map((data, i)=>{
-        return <EditEventBox key={i} {...data} />
+    const posts = eventsData.map((data: any, i: any)=>{
+        //@ts-ignore
+        return <EditEventBox setCurrentEventId={setCurrentEventId} key={i} {...data} />
     })
-    const [reloadPage, setReloadPage] = useState("");
+
+    const [reloadPage, setReloadPage] = useState(true);
     const [pagedItems, setPagedItems] = useState(<></>);
+ 
 
 
     function openForm(){
@@ -32,19 +33,38 @@ export default function DashboardEvents(props: {search: string}) {
         document.getElementById("formWrapper")!.style.opacity = "1";
         document.getElementById("formWrapper")!.style.transform = "translateY(0)";
       }
+
+      useEffect(()=>{
+        let searchString = ""
+        if(!(props.search == "default" || props.search == "")){
+            // Default Data
+            searchString = "/" + encodeURIComponent(props.search)
+        }
+        getData()
+        async function getData(){
+            const events = await getEvents(searchString);
+            setEventsData(events.data)
+        }
+      }, [reloadPage])
     
   return (
     <>
     <div className="center">
-        <EventEditor />
-        <button onClick={openForm} className={styles3.addButton}>+</button>
+        <EventEditor
+            currentEventId={currentEventId}
+            setReloadPage={setReloadPage}
+        />
+        <button onClick={()=>{
+            setCurrentEventId("")
+            openForm()
+        }} className={styles3.addButton}>+</button>
         </div>
   <div className={`center ${styles2.blogList}`}>
     
         {pagedItems}
        
        <Pagination
-             reload={reloadPage}
+             reload={eventsData}
              items={posts}
              setPagedItems={setPagedItems}
              showAmt={4}

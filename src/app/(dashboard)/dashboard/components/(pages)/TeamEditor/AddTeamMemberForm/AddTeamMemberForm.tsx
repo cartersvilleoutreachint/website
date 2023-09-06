@@ -5,20 +5,34 @@ import styles from "../../../additem.module.css"
 import styles2 from "../../../editor.module.css"
 import Image from "next/image";
 import fileUploadHandler from "@/app/lib/fileuploadhandler";
+import createTeamMember from "@/app/controllers/team/createTeamMember";
 
-export default function AddTeamMemberForm() {
+export default function AddTeamMemberForm(props: {setReloadPage: any}) {
 
   const [currentImg, setCurrentImg] = useState("/img/blank-profile.jpg");
   const [formIsActive, setFormIsActive] = useState(false)
   const shaderRef: any = useRef();
   const wrapperRef: any = useRef();
+  const nameRef: any = useRef()
+  const roleRef: any = useRef()
+  const descriptionRef: any = useRef()
 
-  function formSubmitHandler(evt: any){
+  async function formSubmitHandler(evt: any){
     evt.preventDefault();
+    const newTeamMember: teamMemberType = {
+      imgSrc: currentImg,
+      name: nameRef.current.value,
+      role: roleRef.current.value,
+      description: descriptionRef.current.value
+    }
+    await createTeamMember(newTeamMember)
+    closeForm()
+    setCurrentImg("/img/blank.png")
+    nameRef.current.value = ""
+    roleRef.current.value = ""
+    descriptionRef.current.value = ""
+    props.setReloadPage((old: boolean)=>!old)
   }
-
-
- 
 
   function closeForm(){
     shaderRef.current.ontransitionend = ()=>{
@@ -46,9 +60,9 @@ export default function AddTeamMemberForm() {
         </div>
 
         <div className={styles.inputWrapper}>
-            <input required placeholder="Name" type="text" name="nameInput" id="nameInput" className={styles.nameInput} />
-            <input required placeholder="Role" type="text" name="roleInput" id="roleInput" className={styles.roleInput} />
-            <textarea required placeholder="Description" name="descInput" id="descInput" className={styles.descInput}></textarea>
+            <input ref={nameRef} required placeholder="Name" type="text" name="nameInput" id="nameInput" className={styles.nameInput} />
+            <input ref={roleRef} required placeholder="Role" type="text" name="roleInput" id="roleInput" className={styles.roleInput} />
+            <textarea ref={descriptionRef} required placeholder="Description" name="descInput" id="descInput" className={styles.descInput}></textarea>
         </div>
         <div className="center">
           <input type="submit" className="main-button" value="Add Member" />

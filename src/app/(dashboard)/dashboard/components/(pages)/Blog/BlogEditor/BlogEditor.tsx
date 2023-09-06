@@ -6,6 +6,7 @@ import styles3 from "../../../additem.module.css"
 import Image from "next/image"
 import TextEditor from "../../../TextEditor/TextEditor"
 import createBlog from "@/app/controllers/blog/createBlog"
+import updateBlog from "@/app/controllers/blog/updateBlog"
 import { useState, useRef, useEffect } from "react"
 import fileUploadHandler from "@/app/lib/fileuploadhandler"
 
@@ -23,7 +24,6 @@ export default function BlogEditor(props: {currentBlogId: string, setReloadPage:
     const [currentContent, setCurrentContent] = useState("")
 
     async function handleSubmit(evt: any){
-        evt.preventDefault()
         const newBlogData: newBlogType = {
             metadata:{
                 title: titleRef.current.value,
@@ -33,9 +33,15 @@ export default function BlogEditor(props: {currentBlogId: string, setReloadPage:
             },
             content: editorRef.current.getContent()
         }
-        await createBlog(newBlogData)
+        evt.preventDefault()
+        if(props.currentBlogId == ""){
+            await createBlog(newBlogData)
+        }else{
+            await updateBlog(props.currentBlogId, newBlogData)
+        }
         closeForm()
         props.setReloadPage((old: boolean)=>!old)
+       
     }
 
     function closeForm(){

@@ -1,4 +1,4 @@
-export default async function createMedia(data: mediaType){
+export default async function createMedia(data: newMediaType){
     try{
         await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/api/media`, {
             method: "POST",

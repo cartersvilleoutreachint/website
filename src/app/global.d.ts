@@ -1,11 +1,18 @@
 type mediaType = {
-    imageSrc: string,
+    imgSrc: string,
     title: string,
-    link: string
+    link: string,
+    order: number
+}
+
+type newMediaType = {
+  imgSrc: string,
+  title: string,
+  link: string,
 }
 
 type updateMediaType = {
-  imageSrc?: string,
+  imgSrc?: string,
   title?: string,
   link?: string
 }
@@ -17,6 +24,7 @@ type eventType = {
   locationUrl: string,
   moreInfoUrl: string,
   shortDesc: string
+  imgSrc: string
 }
 
 type teamMemberType = {
@@ -70,13 +78,14 @@ type blogType = {
   }
 
   type newEventType = {
-    id: string,
     content: string,
     title: string,
     location: string,
     locationUrl: string,
     date: number,
-    shortDesc: string
+    shortDesc: string,
+    moreInfoUrl?: string,
+    imgSrc: string
   }
 
   type eventMetaType = {

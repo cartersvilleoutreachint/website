@@ -6,13 +6,22 @@ import styles3 from "../../../additem.module.css"
 import Image from "next/image"
 import TextEditor from "../../../TextEditor/TextEditor"
 import { useState, useRef, useEffect } from "react"
+import getEvent from "@/app/controllers/events/getEvent"
 import fileUploadHandler from "@/app/lib/fileuploadhandler"
+import createEvent from "@/app/controllers/events/createEvent"
+import updateEvent from "@/app/controllers/events/updateEvent"
 
-export default function EventEditor() {
+export default function EventEditor(props: {currentEventId: string, setReloadPage: any}) {
 
     const editorRef: any = useRef()
     const wrapperRef: any = useRef()
     const shaderRef: any = useRef()
+    const titleRef: any = useRef()
+    const descRef: any = useRef()
+    const locationRef: any = useRef()
+    const locationUrlRef: any = useRef()
+    const dateRef: any = useRef()
+
 
     const [contentChanged, setContentChanged] = useState(false)
     const [imageIsUploading, setImageIsUploading] = useState(false)
@@ -26,8 +35,53 @@ export default function EventEditor() {
     const [currentDate, setCurrentDate] = useState((new Date().getTime()))
 
 
-    function handleSubmit(evt: any){
+    useEffect(()=>{
+        if(props.currentEventId == ""){
+            titleRef.current.value = ("")
+            setCurrentImg("/img/blank.png")
+            descRef.current.value = ("")
+            locationRef.current.value = ("")
+            dateRef.current.value = getInputTime((new Date().getTime()))
+            locationUrlRef.current.value = ("")
+            setCurrentContent("")
+        }else{
+            getData()
+        }
+        async function getData(){
+            const eventdatas = await getEvent("/" + props.currentEventId);
+            const eventData = eventdatas.data
+            titleRef.current.value = (eventData.title)
+            setCurrentImg(eventData.imgSrc)
+            descRef.current.value = (eventData.shortDesc)
+            locationRef.current.value = (eventData.location)
+            dateRef.current.value = getInputTime(eventData.date)
+            locationUrlRef.current.value = (eventData.locationUrl)
+            setCurrentContent(eventData.content)
+        }
+       
+    }, [props.currentEventId])    
+
+    async function handleSubmit(evt: any){
         evt.preventDefault()
+        const newEvent: newEventType = {
+            title: titleRef.current.value,
+            date: (new Date(dateRef.current.value).getTime()),
+            location: locationRef.current.value,
+            locationUrl: locationUrlRef.current.value,
+            shortDesc: descRef.current.value,
+            imgSrc: currentImg,
+            content: editorRef.current.getContent()
+                    }
+        if(props.currentEventId == ""){
+            newEvent.moreInfoUrl = "/event/" + encodeURIComponent(titleRef.current.value)
+            await createEvent(newEvent)
+            props.setReloadPage((old: boolean)=>!old)
+            closeForm()
+        }else{
+            await updateEvent("/" + props.currentEventId, newEvent)
+            props.setReloadPage((old: boolean)=>!old)
+            closeForm()
+        }
     }
 
     function closeForm(){
@@ -60,23 +114,23 @@ export default function EventEditor() {
                 <label htmlFor="photoInput" className={`${styles2.photoInput} ${styles.photoInput}`}>Choose File</label>
             </div>
             <div className={`${styles.titleWrapper} ${styles2.titleWrapper}`}>
-            <textarea required placeholder="Short Description of the event" defaultValue={currentDesc} name="descInput" id="descInput" className={styles.titleInput}></textarea>
+            <textarea required placeholder="Short Description of the event" defaultValue={currentDesc} ref={descRef} name="descInput" id="descInput" className={styles.titleInput}></textarea>
             </div>
         </div>
         <div className={`${styles2.inputWrapper} ${styles.inputWrapper}`}>
             <div className={styles.titleWrapper}>
-            <span className={styles.inputTitle}>Title:</span><input required placeholder="Event Title" defaultValue={currentTitle} type="text" name="titleInput" id="titleInput" className={styles.titleInput} />
+            <span className={styles.inputTitle}>Title:</span><input required placeholder="Event Title" ref={titleRef}  defaultValue={currentTitle} type="text" name="titleInput" id="titleInput" className={styles.titleInput} />
             </div>
 
             <div className={styles.titleWrapper}>
-            <span className={styles.inputTitle}>Location Url:</span><input required placeholder="Event Location Url" defaultValue={currentLocationUrl} type="text" name="locationUrlInput" id="locationUrlInput" className={styles.titleInput} />
+            <span className={styles.inputTitle}>Location Url:</span><input required placeholder="Event Location Url" ref={locationUrlRef} defaultValue={currentLocationUrl} type="text" name="locationUrlInput" id="locationUrlInput" className={styles.titleInput} />
             </div>
 
             <div className={styles.titleWrapper}>
-            <span className={styles.inputTitle}>Location:</span><input required placeholder="Event Location" defaultValue={currentLocation} type="text" name="locationInput" id="locationInput" className={styles.titleInput} />
+            <span className={styles.inputTitle}>Location:</span><input required placeholder="Event Location" ref={locationRef}  defaultValue={currentLocation} type="text" name="locationInput" id="locationInput" className={styles.titleInput} />
             </div>
             <div className={styles.titleWrapper}>
-            <span className={styles.inputTitle}>Date/Time:</span><input required placeholder="Event Date/Time" defaultValue={getInputTime(currentDate)} type="datetime-local" name="dateInput" id="dateInput" className={styles.titleInput} />
+            <span className={styles.inputTitle}>Date/Time:</span><input required placeholder="Event Date/Time" ref={dateRef}  defaultValue={getInputTime(currentDate)} type="datetime-local" name="dateInput" id="dateInput" className={styles.titleInput} />
             </div>
             <div className={`center ${styles.buttonWrapper}`}>
                 

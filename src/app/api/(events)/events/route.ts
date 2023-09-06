@@ -16,13 +16,13 @@ export async function POST(req: Request){
         locationUrl: "string",
         date: "number",
         shortDesc: "string",
-        content: "string"
+        content: "string",
+        imgSrc:"string",
+        "moreInfoUrl?": "string"
     }
 
     const newEvent = await req.json();
-
     if(typeChecker(newEvent, newEventTemplate)){
-
     try{
         const client = await clientPromise
         const db = client.db("cartersvilleoutint")

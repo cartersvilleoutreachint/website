@@ -1,14 +1,22 @@
 "use client"
 
 import styles from "../../editor.module.css"
-import getTeamMembers from "@/app/(mainsite)/components/Pages/OurTeam/TeamMembers/getTeamMembers"
+import getTeam from "@/app/controllers/team/getTeam"
 import TeamMemberEditor from "./TeamMemberEditor"
 import AddTeamMemberForm from "./AddTeamMemberForm/AddTeamMemberForm"
+import { useState, useEffect } from "react"
 
 export default function TeamEditor() {
 
-    const teamElems = getTeamMembers().map((data, i)=>{
-        return <TeamMemberEditor key={i} {...data} />
+  const [reloadPage, setReloadPage] = useState(false)
+  const [teamData, setTeamData] = useState([])
+
+  interface teamDataType extends teamMemberType{
+    _id: string
+  }
+
+    const teamElems = teamData.map((data: teamDataType)=>{
+        return <TeamMemberEditor setReloadPage={setReloadPage} key={Math.floor(Math.random() * 9999999)} {...data} />
     })
 
     function openForm(){
@@ -19,10 +27,21 @@ export default function TeamEditor() {
       document.getElementById("formWrapper")!.style.transform = "translateY(0)";
     }
 
+    async function getData(){
+      const fetchTeamData = await getTeam();
+      setTeamData(fetchTeamData.data)
+    }
+  
+    useEffect(()=>{
+      getData()
+      
+    }, [reloadPage])
+    
+
   return (
     <div className="center">
         <div className={styles.wrapper}>
-            <AddTeamMemberForm />
+            <AddTeamMemberForm setReloadPage={setReloadPage} />
             <button onClick={openForm} className={styles.addButton}>+</button>
             {teamElems}
         </div>

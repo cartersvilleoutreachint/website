@@ -4,16 +4,29 @@ import styles2 from "../../editor.module.css"
 import styles3 from "./mediaeditor.module.css"
 import Image from "next/image";
 import fileUploadHandler from "@/app/lib/fileuploadhandler";
+import createMedia from "@/app/controllers/media/createMedia";
 
-export default function AddMedia() {
+export default function AddMedia(props: {setReloadPage: any}) {
 
-  const [currentImg, setCurrentImg] = useState("/img/media/mediapic1.png");
-  const [formIsActive, setFormIsActive] = useState(false)
+  const [currentImg, setCurrentImg] = useState("/img/blank.png");
   const shaderRef: any = useRef();
   const wrapperRef: any = useRef();
+  const titleRef: any = useRef()
+  const linkRef: any = useRef()
 
-  function formSubmitHandler(evt: any){
+  async function formSubmitHandler(evt: any){
     evt.preventDefault();
+    const newMedia: newMediaType = {
+      imgSrc: currentImg,
+      title: titleRef.current.value,
+      link: linkRef.current.value
+    }
+    await createMedia(newMedia)
+    closeForm()
+    setCurrentImg("/img/blank.png")
+    titleRef.current.value = ""
+    linkRef.current.value = ""
+    props.setReloadPage((old: boolean)=>!old)
   }
 
  
@@ -44,11 +57,11 @@ export default function AddMedia() {
         </div>
 
         <div className={styles.inputWrapper}>
-            <input required placeholder="Title" type="text" name="titleInput" id="titleInput" className={styles.nameInput} />
-            <input required placeholder="Link" type="text" name="linkInput" id="linkInput" className={styles.roleInput} />
+            <input ref={titleRef} required placeholder="Title" type="text" name="titleInput" id="titleInput" className={styles.nameInput} />
+            <input ref={linkRef} required placeholder="Link" type="text" name="linkInput" id="linkInput" className={styles.roleInput} />
         </div>
         <div className="center">
-          <input type="submit" className="main-button" value="Add Media" />
+          <input type="submit" className="main-button" value="Publish" />
         </div>
         <button onClick={(evt)=>{evt.preventDefault(); closeForm()}} className={styles.closeForm}>&times;</button>
       </form>
