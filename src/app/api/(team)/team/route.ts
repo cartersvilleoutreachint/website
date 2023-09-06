@@ -14,8 +14,7 @@ export async function POST(req: Request){
        imgSrc: "string",
        description: "string",
        role: "string",
-       name: "string",
-       order: "number"
+       name: "string"
     }
 
     const newTeam = await req.json();
@@ -25,6 +24,8 @@ export async function POST(req: Request){
     try{
         const client = await clientPromise
         const db = client.db("cartersvilleoutint")
+        const order = await db.collection("team").countDocuments()
+        newTeam.order = order
         await db.collection("team").insertOne(newTeam)
         
         return NextResponse.json({"status": "Success"}, {status: 200})
@@ -42,7 +43,7 @@ export async function GET(){
     try{
         const client = await clientPromise
         const db = client.db("cartersvilleoutint")
-        const results = await db.collection("team").find().toArray()
+        const results = await db.collection("team").find().sort({order: 1}).toArray()
         
         return NextResponse.json({data: results}, {status: 200})
     }catch(err){

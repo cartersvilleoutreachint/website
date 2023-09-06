@@ -23,6 +23,8 @@ export async function POST(req: Request){
     try{
         const client = await clientPromise
         const db = client.db("cartersvilleoutint")
+        const order = await db.collection("media").countDocuments();
+        newMedia.order = order
         await db.collection("media").insertOne(newMedia)
         
         return NextResponse.json({"status": "Success"}, {status: 200})
@@ -39,7 +41,7 @@ export async function GET(){
     try{
         const client = await clientPromise
         const db = client.db("cartersvilleoutint")
-        const results = await db.collection("media").find().toArray()
+        const results = await db.collection("media").find().sort({order: 1}).toArray()
         
         return NextResponse.json({data: results}, {status: 200})
     }catch(err){
