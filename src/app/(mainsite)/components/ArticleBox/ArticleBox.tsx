@@ -22,7 +22,7 @@ export default function ArticleBox(props: articleBoxPropType) {
         <div>{getSlashedDate(props.metadata.date)}</div>
       </div>
       <div className="center">
-        <Link className={`main-button ${styles.readArticle}`} href={props.metadata.url}>Read Article</Link>
+        <Link className={`main-button ${styles.readArticle}`} href={(props.metadata.url)}>Read Article</Link>
       </div>
     </aside>
   )

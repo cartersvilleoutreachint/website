@@ -28,7 +28,7 @@ export default function UpcomingEvent(props: upcomingEventPropType) {
         <p className={styles.shortDesc}>{props.shortDesc}</p>
         <div className={styles.linkWrapper}>
             <Link href={props.moreInfoUrl} className={`main-button ${styles.moreInfoLink}`}>More Information</Link>
-            <a href={props.locationUrl} className={`main-button ${styles.viewLocationLink}`}>View Location</a>
+            <a href={props.locationUrl} target="_blank" className={`main-button ${styles.viewLocationLink}`}>View Location</a>
         </div>
     </aside>
   )
