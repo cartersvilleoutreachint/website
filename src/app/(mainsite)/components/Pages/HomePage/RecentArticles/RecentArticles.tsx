@@ -1,19 +1,30 @@
 "use client"
 
 import getCarouselBreakpoints from "../../../utils/getCarouselBreakpoints"
-import getRecentArticleData from "./getRecentArticleData"
+import getRecentBlogs from "@/app/controllers/blog/getRecentBlogs"
 import styles from "./recentarticles.module.css"
 import Carousel from "react-multi-carousel"
 import ArticleBox from "../../../ArticleBox/ArticleBox"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 export default function RecentArticles() {
 
-      const recentArticleElems = getRecentArticleData().map((data, i)=>{
+    const [blogData, setBlogData] = useState([]);
+
+      const recentArticleElems = blogData.map((data: any, i)=>{
         return(
           <ArticleBox key={i} {...data} />
         )
       })
+
+      useEffect(()=>{
+        getData()
+        async function getData(){
+          const fetchBlogData = await getRecentBlogs();
+          setBlogData(fetchBlogData.data)
+        }
+      }, [])
 
   return (
     <section className={styles.recentArticles}>

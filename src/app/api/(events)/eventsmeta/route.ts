@@ -12,7 +12,8 @@ export async function GET(){
             locationUrl: 1,
             location: 1,
             date: 1,
-            shortDesc: 1
+            shortDesc: 1,
+            moreInfoUrl: 1
         }})
         .sort({date: -1})
         .toArray()

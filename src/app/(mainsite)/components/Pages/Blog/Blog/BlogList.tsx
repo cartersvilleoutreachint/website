@@ -4,15 +4,16 @@ import Pagination from "../../../Vendor/Pagination/Pagination"
 import {useState} from "react"
 import styles from "./blog.module.css"
 import ArticleBox from "../../../ArticleBox/ArticleBox"
-import testRecentArticlesData from "../../HomePage/RecentArticles/testRecentArticlesData"
 
 interface blogPropsType{
     search: string
 }
 
 export default function BlogList(props: blogPropsType) {
+
+    const [blogData, setBlogData] = useState([])
     
-const posts = testRecentArticlesData.map((data, i)=>{
+const posts = blogData.map((data: any, i)=>{
     return <ArticleBox key={i} {...data} />
 })
 const [reloadPage, setReloadPage] = useState("");

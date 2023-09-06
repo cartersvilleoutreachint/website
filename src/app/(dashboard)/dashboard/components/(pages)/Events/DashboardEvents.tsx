@@ -15,13 +15,14 @@ export default function DashboardEvents(props: {search: string}) {
 
     const [eventsData, setEventsData] = useState([])
     const [currentEventId, setCurrentEventId] = useState("")
+    const [reloadPage, setReloadPage] = useState(true);
 
     const posts = eventsData.map((data: any, i: any)=>{
         //@ts-ignore
-        return <EditEventBox setCurrentEventId={setCurrentEventId} key={i} {...data} />
+        return <EditEventBox setReloadPage={setReloadPage} setCurrentEventId={setCurrentEventId} key={i} {...data} />
     })
 
-    const [reloadPage, setReloadPage] = useState(true);
+    
     const [pagedItems, setPagedItems] = useState(<></>);
  
 

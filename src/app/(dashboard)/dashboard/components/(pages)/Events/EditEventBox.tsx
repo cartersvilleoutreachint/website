@@ -6,7 +6,8 @@ import deleteEvent from "@/app/controllers/events/deleteEvent";
 
 interface eventBoxType extends eventType{
   _id: string,
-  setCurrentEventId: any
+  setCurrentEventId: any,
+  setReloadPage: any
 }
 export default function EditEventBox(props: eventBoxType) {
 
@@ -35,7 +36,7 @@ export default function EditEventBox(props: eventBoxType) {
               props.setCurrentEventId(props._id)
               openForm()
             }} className={`${styles.editButton} main-button`}>Edit</button>
-            <button onClick={()=>{deleteEvent(props._id)}} className={`${styles.deleteButton} main-button`}>Delete</button>
+            <button onClick={async ()=>{await deleteEvent(props._id); props.setReloadPage((old: boolean)=>!old)}} className={`${styles.deleteButton} main-button`}>Delete</button>
         </div>
       </aside>
   )

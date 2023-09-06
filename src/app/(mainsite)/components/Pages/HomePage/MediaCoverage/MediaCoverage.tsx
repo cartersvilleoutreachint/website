@@ -2,17 +2,27 @@
 
 import getCarouselBreakpoints from "../../../utils/getCarouselBreakpoints"
 import styles from "./mediacoverage.module.css"
-import getMedia from "./getMedia"
 import MediaBox from "./MediaBox"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css"
+import { useEffect, useState } from "react";
+import getMedia from "@/app/controllers/media/getMedia";
 
 export default function MediaCoverage() {
 
-    const mediaData = getMedia();
-    const mediaDataElems = mediaData.map((data, i)=>{
+    const [mediaData, setMediaData] = useState([])
+
+    const mediaDataElems = mediaData.map((data: any, i)=>{
         return <MediaBox key={i} {...data} />
     });
+
+    useEffect(()=>{
+      getData()
+      async function getData(){
+        const fetchMediaData = await getMedia();
+        setMediaData(fetchMediaData.data)
+      }
+    }, [])
   return (
     <section className={styles.mediaCoverageSection}>
         <h2 className={styles.mediaHeading}>Media Coverage</h2>

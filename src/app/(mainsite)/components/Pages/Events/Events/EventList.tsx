@@ -1,12 +1,16 @@
+"use client"
+
 import styles from "./events.module.css"
 import UpcomingEvent from "../../HomePage/UpcomingEvents/UpcomingEvent"
-import testUpcomingEventsData from "../../HomePage/UpcomingEvents/testUpcomingEventData"
+import { useState } from "react"
 
 interface eventsPropsType{
     search: string
 }
 
 export default async function EventList(props: eventsPropsType) {
+
+    const [eventData, setEventData] = useState([])
 
     if(props.search == "default"){
         // Default Data
@@ -15,7 +19,7 @@ export default async function EventList(props: eventsPropsType) {
         // Search data
 
     }
-    const events = testUpcomingEventsData.map((data, i)=>{
+    const events = eventData.map((data: any, i)=>{
         return <UpcomingEvent key={i} {...data} />
     })
 

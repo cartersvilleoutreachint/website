@@ -1,19 +1,30 @@
 "use client"
 
 import Carousel from "react-multi-carousel"
-import getUpcomingEventsData from "./getUpcomingEventsData"
+import getEvents from "@/app/controllers/events/getEvents"
 import styles from "./upcomingevents.module.css"
 import UpcomingEvent from "./UpcomingEvent"
 import getCarouselBreakpoints from "../../../utils/getCarouselBreakpoints"
+import { useEffect, useState } from "react"
 
 export default function UpcomingEvents() {
 
+  const [eventsData, setEventsData] = useState([]);
 
-      const upcomingEventsElems = (getUpcomingEventsData()).map((data, i)=>{
+      const upcomingEventsElems = eventsData.map((data: any, i)=>{
         return(
             <UpcomingEvent key={i} {...data} />
         )
       })
+
+      useEffect(()=>{
+        getData()
+        async function getData(){
+          const fetchEventsData = await getEvents();
+          console.log(fetchEventsData)
+          setEventsData(fetchEventsData.data)
+        }
+      }, [])
 
   return (
     <section className={styles.upcomingEvents}>
@@ -21,7 +32,7 @@ export default function UpcomingEvents() {
         <Carousel
         responsive={getCarouselBreakpoints(1,1,2)}
         infinite={true}
-        // autoPlay={true}
+        autoPlay={true}
         autoPlaySpeed={6000}
         renderButtonGroupOutside={true}
         >

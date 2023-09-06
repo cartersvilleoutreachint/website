@@ -73,7 +73,6 @@ export default function EventEditor(props: {currentEventId: string, setReloadPag
             content: editorRef.current.getContent()
                     }
         if(props.currentEventId == ""){
-            newEvent.moreInfoUrl = "/event/" + encodeURIComponent(titleRef.current.value)
             await createEvent(newEvent)
             props.setReloadPage((old: boolean)=>!old)
             closeForm()

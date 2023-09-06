@@ -12,7 +12,7 @@ export async function POST(req: Request){
     const newBlogTemplate = {
         metadata: {
             title: "string",
-            url: "string",
+            "url?": "string",
             date: "number",
             imgSrc: "string"
         },
@@ -22,7 +22,7 @@ export async function POST(req: Request){
     const newBlog = await req.json();
 
     if(typeChecker(newBlog, newBlogTemplate)){
-
+    newBlog.metadata.url = "/article/" + encodeURIComponent(newBlog.metadata.title)
     
     try{
         const client = await clientPromise

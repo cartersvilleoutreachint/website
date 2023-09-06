@@ -23,6 +23,7 @@ export async function POST(req: Request){
 
     const newEvent = await req.json();
     if(typeChecker(newEvent, newEventTemplate)){
+        newEvent.moreInfoUrl = "/event/" + encodeURIComponent(newEvent.title)
     try{
         const client = await clientPromise
         const db = client.db("cartersvilleoutint")
