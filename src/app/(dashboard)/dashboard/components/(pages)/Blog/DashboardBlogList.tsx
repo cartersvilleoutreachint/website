@@ -40,7 +40,7 @@ export default function DashboardBlogList(props: {search: string}) {
 
         getData()
         async function getData(){
-            const blogfetchData = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/api/blogmeta${searchString}`)
+            const blogfetchData = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/api/blogmeta${searchString}`,{cache: "no-store"})
             const blogData = await blogfetchData.json();
             setBlogData(blogData.data)
         }
