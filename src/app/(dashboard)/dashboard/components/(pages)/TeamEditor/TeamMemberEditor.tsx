@@ -74,9 +74,10 @@ export default function TeamMemberEditor(props: teamMemberEditorType) {
             <div className={styles.profileTitle}>Profile Photo</div>
             <label htmlFor="photoInput" className={styles.photoInput}>Choose File</label>
             <input onChange={async (evt)=>{
-              setUnsavedChanges()
+             
               const imgLink = await fileUploadHandler(evt);
               setCurrentImg(imgLink)
+              setUnsavedChanges()
             }} type="file" name="photoInput" id="photoInput" style={{display: "none"}}  />
         </div>
 
