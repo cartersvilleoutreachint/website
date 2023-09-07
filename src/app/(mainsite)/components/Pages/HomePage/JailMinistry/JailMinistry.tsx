@@ -7,7 +7,7 @@ export default function JailMinistry() {
         
             
                 <h2 className={styles.jailMinistryHeading}>Our jail ministry</h2>
-                <p className={styles.jailMinistryDescription}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p className={styles.jailMinistryDescription}>We minister in the Bartow County Jail to inmates. We not only works to help inmates overcome the challenges of incarceration, but also teach them how to have power over the devil by relying on their faith in God. No matter what someone has done, they can still be redeemed and change their lives through a relationship with Jesus Christ.</p>
                 
                 <Link href="/blog" className={`main-button ${styles.readMore}`}>Read More</Link>
             
