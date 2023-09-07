@@ -1,7 +1,8 @@
 export default async function getMedia(){
     try{
         const fetchData = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/api/media`, {
-            method: "GET"
+            method: "GET",
+            cache: "no-store"
         })
 
         const results = await fetchData.json()
