@@ -19,7 +19,6 @@ export default function BlogList(props: blogPropsType) {
         getData()
         async function getData(){
             const fetchBlogData = await getBlogsMeta(searchStr);
-            console.log(fetchBlogData)
             setBlogData(fetchBlogData.data)
         }
     }, [props.search])

@@ -21,7 +21,6 @@ export default function UpcomingEvents() {
         getData()
         async function getData(){
           const fetchEventsData = await getEvents();
-          console.log(fetchEventsData)
           setEventsData(fetchEventsData.data)
         }
       }, [])

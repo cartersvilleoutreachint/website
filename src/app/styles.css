@@ -26,6 +26,8 @@ body{
     background-color: var(--main-color);
     font-family: var(--main-font);
     color: var(--main-text-color);
+    z-index: -5;
+    position: relative;
 }
 
 

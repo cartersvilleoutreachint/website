@@ -1,0 +1,111 @@
+.articleSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.articleContainer{
+    display: inline-block;
+    width: 60%;
+    background-color: white;
+}
+
+.coverImg{
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+    object-position: center;
+}
+
+.title{
+    font-family: var(--secondary-font);
+    margin: 2vw 15% 0 15%;
+    font-weight: 300;
+}
+
+.dateWrapper{
+    display: flex; align-items: center;
+}
+
+.dateWrapper img{
+    height: 2vw;
+    width: 2vw;
+    margin-left: 16%;
+}
+.dateWrapper span{
+    color: var(--main-color);
+    font-style: italic;
+}
+
+.content{
+    padding: 2vw 15%;
+    color: var(--main-color);
+    white-space: pre-wrap;
+    line-height: 2rem;
+    font-size: 110%;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .dateWrapper{
+       margin: 1vw 0;
+    }
+    .articleContainer{
+        width: 80%;
+    }
+    
+    .coverImg{
+        height: 20vw;
+    }
+    
+    .title{
+        margin: 2vw 10% 0 10%;
+    }
+    
+    .dateWrapper img{
+        height: 4vw;
+        width: 4vw;
+        margin-left: 11%;
+    }
+    .dateWrapper span{
+        font-size: 120%;
+    }
+    
+    .content{
+        padding: 2vw 10%;
+        font-size: 120%;
+    }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .dateWrapper{
+        margin: 2vw 0;
+     }
+     .articleContainer{
+         width: 90%;
+     }
+     
+     .coverImg{
+         height: 30vw;
+     }
+     
+     .title{
+         margin: 2vw 10% 0 10%;
+     }
+     
+     .dateWrapper img{
+         height: 6vw;
+         width: 6vw;
+         margin-left: 11%;
+     }
+     .dateWrapper span{
+         font-size: 120%;
+     }
+     
+     .content{
+         padding: 2vw 10%;
+         font-size: 120%;
+     }
+}

@@ -10,6 +10,9 @@ export async function GET(req: Request, {params}: {params: { id: string}}){
         const db = client.db("cartersvilleoutint")
         const results = await db.collection("blog").findOne({_id: new ObjectId(params.id)})
         return NextResponse.json({data: results})
+        
+        
+        
     }catch(err){
         return NextResponse.json({error: err}, {status: 500})
     }

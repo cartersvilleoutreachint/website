@@ -26,16 +26,17 @@ export async function PUT(req: Request, {params}: {params: { id: string}}){
     }
 
     const updateEventTemplate = {
-       "content?":" string",
+       "content?": "string",
         "title?": "string",
         "location?": "string",
         "locationUrl?": "string",
         "date?": "number",
-       "shortDesc?": "string"
+       "shortDesc?": "string",
+       "imgSrc?": "string"
     }
 
     const updatedEventFields = await req.json()
-    
+    console.log(updatedEventFields)
     if(typeChecker(updatedEventFields, updateEventTemplate)){
 
         try{

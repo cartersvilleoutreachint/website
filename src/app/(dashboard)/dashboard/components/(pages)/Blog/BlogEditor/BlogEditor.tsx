@@ -24,10 +24,9 @@ export default function BlogEditor(props: {currentBlogId: string, setReloadPage:
     const [currentContent, setCurrentContent] = useState("")
 
     async function handleSubmit(evt: any){
-        const newBlogData: newBlogType = {
+        const newBlogData: any = {
             metadata:{
                 title: titleRef.current.value,
-                url: `/article/${(currentTitle.toLowerCase()).trim().replaceAll(" ", "+")}`,
                 imgSrc: currentImg,
                 date: (new Date().getTime())
             },
@@ -72,7 +71,7 @@ export default function BlogEditor(props: {currentBlogId: string, setReloadPage:
             setData();
         }
         async function setData(){
-            const fetchData = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/api/blog/${props.currentBlogId}`)
+            const fetchData = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/api/blog/${(props.currentBlogId)}`)
             const blogData = await fetchData.json();
             setCurrentImg(blogData.data.metadata.imgSrc)
             setCurrentTitle(blogData.data.metadata.title)
