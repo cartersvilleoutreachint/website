@@ -4,6 +4,7 @@ import styles from "./events.module.css"
 import UpcomingEvent from "../../HomePage/UpcomingEvents/UpcomingEvent"
 import { useEffect, useState } from "react"
 import getEvents from "@/app/controllers/events/getEvents"
+import Loading from "../../../Misc/Loading/Loading"
 
 interface eventsPropsType{
     search: string
@@ -12,6 +13,7 @@ interface eventsPropsType{
 export default function EventList(props: eventsPropsType) {
 
     const [eventData, setEventData] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     
     const events = eventData.map((data: any, i)=>{
@@ -25,11 +27,14 @@ export default function EventList(props: eventsPropsType) {
         async function getData(){
             const fetchEventData = await getEvents(searchStr);
             setEventData(fetchEventData.data)
+            setIsLoading(false)
         }
     }, [props.search])
 
   return (
     <div className={`center ${styles.eventList}`}>
+        {(!isLoading && eventData.length == 0) && <div className="noData">No Events</div>}
+        {(isLoading) && <Loading />}
         {events}
     </div>
   )

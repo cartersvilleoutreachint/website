@@ -7,10 +7,12 @@ import Carousel from "react-multi-carousel"
 import ArticleBox from "../../../ArticleBox/ArticleBox"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import Loading from "../../../Misc/Loading/Loading"
 
 export default function RecentArticles() {
 
     const [blogData, setBlogData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
 
       const recentArticleElems = blogData.map((data: any, i)=>{
         return(
@@ -23,12 +25,15 @@ export default function RecentArticles() {
         async function getData(){
           const fetchBlogData = await getRecentBlogs();
           setBlogData(fetchBlogData.data)
+          setIsLoading(false)
         }
       }, [])
 
   return (
     <section className={styles.recentArticles}>
         <h2 className={styles.recentArticlesTitle}>Recent Articles</h2>
+        {(isLoading) && <Loading />}
+        {(!isLoading && blogData.length == 0) && <div className={styles.noData}>No Posts</div>}
         <Carousel
         responsive={getCarouselBreakpoints(1,2,3)}
         autoPlay={false}
@@ -38,7 +43,8 @@ export default function RecentArticles() {
             {recentArticleElems}
         </Carousel>
         <div className={styles.moreArticles}>
-          <Link className={styles.moreArticlesLink} href="/blog">More Articles</Link>
+        {(!isLoading && blogData.length > 0) &&<Link className={styles.moreArticlesLink} href="/blog">More Articles</Link>}
+          
         </div>  
     </section>
   )

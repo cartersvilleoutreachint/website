@@ -5,6 +5,7 @@
 .eventList{
     flex-wrap: wrap;
     min-height: 50vh;
+    position: relative;
 }
 
 .eventList aside{

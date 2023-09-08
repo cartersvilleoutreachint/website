@@ -1,5 +1,7 @@
 .mediaCoverageSection{
     padding: 2vw 0;
+    position: relative;
+    min-height: 30vw;
 }
 
 .mediaHeading{
@@ -74,6 +76,7 @@ li:has(.mediaBox){
 @media only screen and (min-width: 650px) and (max-width: 990px){
     .mediaCoverageSection{
         padding: 3vw 0;
+        min-height: 40vw;
     }
     .mediaBox{
         width: 40vw;
@@ -96,6 +99,7 @@ li:has(.mediaBox){
 @media only screen and (max-width: 649px){
     .mediaCoverageSection{
         padding: 4vw 0;
+        min-height: 85vw;
     }
     .mediaHeading{
         text-align: center;

@@ -1,0 +1,34 @@
+.loadingWrapper{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    align-items: center;
+    justify-content: center;
+}
+
+.animWrapper{
+    display: inline-block;
+    height: 15vw;
+    width: 15vw;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .animWrapper{
+        display: inline-block;
+        height: 20vw;
+        width: 20vw;
+    }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .animWrapper{
+        display: inline-block;
+        height: 30vw;
+        width: 30vw;
+    }
+}

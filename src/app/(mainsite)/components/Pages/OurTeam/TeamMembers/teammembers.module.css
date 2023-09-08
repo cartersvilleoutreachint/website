@@ -2,6 +2,8 @@
     display: inline-flex;
     width: 70%;
     flex-wrap: wrap;
+    min-height: 90vh;
+    position: relative;
 }
 
 .teamMember{
@@ -47,6 +49,7 @@
 @media only screen and (min-width: 650px) and (max-width: 990px){
     .teamMembersWrapper{
         width: 85%;
+        min-height: 50vh;
     }
     .teamMember *{
         margin: 0.4vw 0;
@@ -63,6 +66,7 @@
 @media only screen and (max-width: 649px){
     .teamMembersWrapper{
         width: 90%;
+        min-height: 90vh;
     }
     
     .teamMember{

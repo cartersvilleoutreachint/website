@@ -5,6 +5,7 @@ import {useEffect, useState} from "react"
 import styles from "./blog.module.css"
 import ArticleBox from "../../../ArticleBox/ArticleBox"
 import getBlogsMeta from "@/app/controllers/blog/getBlogsMeta"
+import Loading from "../../../Misc/Loading/Loading"
 
 interface blogPropsType{
     search: string
@@ -13,6 +14,7 @@ interface blogPropsType{
 export default function BlogList(props: blogPropsType) {
 
     const [blogData, setBlogData] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(()=>{
         const searchStr = (props.search == "default") ? "" : `/${props.search}`
@@ -20,6 +22,7 @@ export default function BlogList(props: blogPropsType) {
         async function getData(){
             const fetchBlogData = await getBlogsMeta(searchStr);
             setBlogData(fetchBlogData.data)
+            setIsLoading(false)
         }
     }, [props.search])
     
@@ -32,15 +35,17 @@ const [pagedItems, setPagedItems] = useState(<></>);
 
   return (
     <div className={`center ${styles.blogList}`}>
+        {(!isLoading && blogData.length == 0) && <div className="noData">No Posts</div>}
+        {(isLoading) && <Loading />}
         {pagedItems}
        
-  <Pagination
+  {(!isLoading && blogData.length > 0) && <Pagination
         reload={blogData}
         items={posts}
         setPagedItems={setPagedItems}
         showAmt={4}
         itemsPerPage={6}
-    /> 
+    /> }
     </div>
   )
 }

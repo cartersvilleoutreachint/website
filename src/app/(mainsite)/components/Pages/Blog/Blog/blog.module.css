@@ -6,6 +6,7 @@
     flex-wrap: wrap;
     align-items: stretch;
     min-height: 50vh;
+    position: relative;
 }
 
 
