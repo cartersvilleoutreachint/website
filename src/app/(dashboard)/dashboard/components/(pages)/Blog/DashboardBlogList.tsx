@@ -1,7 +1,6 @@
 "use client"
 
 import BlogEditor from "./BlogEditor/BlogEditor"
-import Loading from "@/app/(mainsite)/components/Misc/Loading/Loading"
 import EditArticleBox from "./EditArticleBox"
 import styles2 from "@/app/(mainsite)/components/Pages/Blog/Blog/blog.module.css"
 import styles from "./dashboardblog.module.css"
@@ -52,18 +51,18 @@ export default function DashboardBlogList(props: {search: string}) {
         <button onClick={()=>{openForm(); setCurrentBlogId("");}} className={styles3.addButton}>+</button>
         </div>
   <div className={`center ${styles2.blogList} ${styles.blogList}`}>
-    {(blogData.length == 0)&& <Loading />}
+    {(blogData.length == 0)&& <div className="noData">No Posts Found</div>}
     <BlogEditor setReloadPage={setReloadPage} currentBlogId={currentBlogId} />
     
         {pagedItems}
        
-       <Pagination
+        {(blogData.length > 0)&& <Pagination
              reload={blogData}
              items={posts}
              setPagedItems={setPagedItems}
              showAmt={4}
              itemsPerPage={6}
-         /> 
+         />}
   </div>
   </>
     )

@@ -8,7 +8,9 @@
 .articleContainer{
     display: inline-block;
     width: 60%;
+    position: relative;
     background-color: white;
+    min-height: 30vw;
 }
 
 .coverImg{
@@ -53,6 +55,7 @@
     }
     .articleContainer{
         width: 80%;
+        min-height: 40vw;
     }
     
     .coverImg{
@@ -84,6 +87,7 @@
         margin: 2vw 0;
      }
      .articleContainer{
+        min-height: 60vw;
          width: 90%;
      }
      

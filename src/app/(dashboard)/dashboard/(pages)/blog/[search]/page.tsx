@@ -5,9 +5,7 @@ import DashboardBlogList from "../../../components/(pages)/Blog/DashboardBlogLis
 export default function DashboardBlogPage({params}: {params:{search: string}}) {
     return (
       <>
-      <Suspense fallback={<Loading/>}>
           <DashboardBlogList search={params.search} />
-      </Suspense>
       </>
     )
   }

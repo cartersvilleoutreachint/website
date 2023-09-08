@@ -3,8 +3,9 @@
 import styles from "./event.module.css"
 import PageBanner from "../../Misc/PageBanner/PageBanner"
 import getEventContent from "@/app/controllers/events/getEventContent"
-import { use, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import getFormattedTime from "../../utils/getFormattedTime"
+import Loading from "../../Misc/Loading/Loading"
 
 export default function Event(props: {eventId: string}) {
 
@@ -13,6 +14,8 @@ export default function Event(props: {eventId: string}) {
     const [currentTitle, setCurrentTitle] = useState("")
     const [currentLocationUrl, setCurrentLocationUrl] = useState("")
     const [currentLocation, setCurrentLocation] = useState("")
+    const [isLoading, setIsLoading] = useState(true)
+    const [hasContent, setHasContent] = useState(false)
 
     useEffect(()=>{
         getData()
@@ -24,13 +27,19 @@ export default function Event(props: {eventId: string}) {
                 setCurrentLocation(fetchEventData.data.location)
                 setCurrentLocationUrl(fetchEventData.data.locationUrl)
                 setCurrentContent(fetchEventData.data.content)
+                setHasContent(true)
             }
+            setIsLoading(false)
         }
     }, [])
   return (
     <section className={styles.eventSection}>
-        <PageBanner styles={{color: "var(--main-text-color)"}} pageTitle={currentTitle} imgSrc={"/img/pagebanners/calendar.jpg"} />
+        <PageBanner pageTitle={currentTitle} imgSrc={"/img/pagebanners/calendar.jpg"} />
         <article className={styles.eventWrapper}>
+            {(isLoading) && <Loading />}
+            {(!isLoading && !hasContent) && <div className="noData">Invalid Event</div>}
+
+            {(!isLoading && hasContent) && <>
             <h2 className={styles.title}>{currentTitle}</h2>
             <div className={styles.dateWrapper}>
                 <img className={styles.icon} src="/img/date-icon.svg" alt="Date Icon" />
@@ -42,6 +51,7 @@ export default function Event(props: {eventId: string}) {
             </div>
             <a href={currentLocationUrl} target="_blank" className={`main-button ${styles.locationLink}`}>View Location</a>
             <div className={styles.content} dangerouslySetInnerHTML={{"__html": currentContent}}></div>
+            </>}
         </article>
     </section>
   )
