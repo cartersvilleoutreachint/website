@@ -19,7 +19,7 @@ export default function ContactForm() {
                     <input className={styles.submitButton} type="submit" value="Send Message" />
                 </div>
 
-                <input type="hidden" name="_next" value="https://cartersvilleoutreachinternational/contact?messagesuccess=true" />
+                <input type="hidden" name="_next" value="https://cartersvilleoutreachinternational.org/contact?messagesuccess=true" />
                 <input type="hidden" name="_template" value="table" />
             </form>
         </div>
