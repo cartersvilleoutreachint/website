@@ -18,8 +18,9 @@ export default function TeamMemberEditor(props: teamMemberEditorType) {
   const nameRef: any = useRef()
   const roleRef: any = useRef()
   const descriptionRef: any = useRef()
+  const fileUploadRef: any = useRef()
 
-  const [currentImg, setCurrentImg] = useState(props.imgSrc)
+  const [currentImage, setCurrentImage] = useState(props.imgSrc)
   const [savingState, setSavingState] = useState(false)
 
   function setUnsavedChanges(){
@@ -35,8 +36,8 @@ export default function TeamMemberEditor(props: teamMemberEditorType) {
     props.setReloadPage((old: boolean)=>!old)
   }
 
-  async function saveChanges(){
-    await updateTeamMember(props._id, {role: roleRef.current.value, imgSrc: currentImg, name: nameRef.current.value, description: descriptionRef.current.value})
+  async function saveChanges(img = currentImage){
+    await updateTeamMember(props._id, {role: roleRef.current.value, imgSrc: img, name: nameRef.current.value, description: descriptionRef.current.value})
   }
 
   setInterval(async ()=>{
@@ -70,15 +71,16 @@ export default function TeamMemberEditor(props: teamMemberEditorType) {
         </div>
 
         <div className={styles.profileWrapper}>
-            <Image className={styles.profileImg} height={100} width={100} src={props.imgSrc} alt="Profile Image" />
+            <Image className={styles.profileImg} height={100} width={100} src={currentImage} alt="Profile Image" />
             <div className={styles.profileTitle}>Profile Photo</div>
-            <label htmlFor="photoInput" className={styles.photoInput}>Choose File</label>
-            <input onChange={async (evt)=>{
-             
+            <label htmlFor="profilePhotoInput" className={styles.photoInput}>Choose File</label>
+            <input ref={fileUploadRef} 
+            onChange={async (evt)=>{
               const imgLink = await fileUploadHandler(evt);
-              setCurrentImg(imgLink)
-              setUnsavedChanges()
-            }} type="file" name="photoInput" id="photoInput" style={{display: "none"}}  />
+              setCurrentImage(imgLink)
+              saveChanges(imgLink)
+            }} 
+            type="file" name="profilePhotoInput" id="profilePhotoInput" style={{display: "none"}}  />
         </div>
 
         <div className={styles.inputWrapper}>
