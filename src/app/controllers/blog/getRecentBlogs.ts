@@ -2,7 +2,7 @@ export default async function getRecentBlogs(){
     try{
         const fetchData = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/api/blogmeta/recent`, {
             method: "GET",
-            next: {revalidate: 10000}
+            cache: "no-store"
         })
 
         const results = await fetchData.json()
