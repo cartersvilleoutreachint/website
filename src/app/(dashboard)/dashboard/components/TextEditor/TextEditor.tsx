@@ -43,7 +43,7 @@ export default function TextEditor(props: proptype) {
         const input = document.getElementById('imgUpload')! as HTMLInputElement;
         input.click();
 
-        input.onchange = function() { compressImage(input.files![0], {height: 200}).then((myBlob)=>{
+        input.onchange = function() { compressImage(input.files![0], {width: 1280}).then((myBlob)=>{
             var file = myBlob;
             const formData = new FormData();
             
