@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer>
         <aside id="footerSocials">
-            <a href="https://www.facebook.com/profile.php?id=100064747237262" target="_blank">
+            <a href="https://www.facebook.com/profile.php?id=100066217855994" target="_blank">
                 <Image src="/img/facebook-icon.svg" alt="Facebook Icon" width={100} height={100}/>
             </a>
             <a href="https://www.instagram.com/cvilleoutreachint" target="_blank">
