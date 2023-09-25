@@ -16,6 +16,7 @@ export default function Article(props:{articleId: string}) {
     const [hasContent, setHasContent] = useState(false)
 
     useEffect(()=>{
+        window.scrollTo(0,0);
         getData()
         async function getData() {
             const fetchBlogData = await getBlogContent(props.articleId);
