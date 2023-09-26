@@ -2,7 +2,7 @@ export default async function getEvents(search = ""){
     try{
         const fetchData = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/api/eventsmeta${search}`, {
             method: "GET",
-            cache: "no-cache"
+            cache: "no-store"
         })
 
         const results = await fetchData.json()
