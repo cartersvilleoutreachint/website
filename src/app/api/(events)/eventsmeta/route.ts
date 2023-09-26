@@ -15,7 +15,7 @@ export async function GET(){
             shortDesc: 1,
             moreInfoUrl: 1
         }})
-        .sort({date: -1})
+        .sort({date: 1})
         .toArray()
         
         return NextResponse.json({data: results})
