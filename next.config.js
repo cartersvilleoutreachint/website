@@ -4,5 +4,5 @@ const nextConfig = {
         domains: ['i.imgur.com']
     },
 }
-
+// Force Update
 module.exports = nextConfig
