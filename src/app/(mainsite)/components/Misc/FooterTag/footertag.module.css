@@ -1,0 +1,38 @@
+.tag{
+    background-color: var(--main-color);
+    padding: 1.5vw 4vw;
+    text-align: right;
+}
+
+.tag img{
+    position: relative;
+    bottom: -0.1rem;
+    width: 1rem;
+    height: 1rem;
+    object-position: bottom;
+}
+
+.tag a{
+    color: #D44B4B;
+    transition: 0.3s color;
+}
+.tag a:hover{
+    color: white;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .tag{
+        padding: 3vw 6vw;
+    }
+}
+
+
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .tag{
+        padding: 4vw 4vw;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+}

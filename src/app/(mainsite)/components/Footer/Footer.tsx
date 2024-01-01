@@ -1,9 +1,11 @@
 import "./footer.css"
 import Image from "next/image"
 import Link from "next/link"
+import FooterTag from "../Misc/FooterTag/FooterTag"
 
 export default function Footer() {
   return (
+    <>
     <footer>
         <aside id="footerSocials">
             <a href="https://www.facebook.com/profile.php?id=100066217855994" target="_blank">
@@ -37,5 +39,7 @@ export default function Footer() {
           </ul>
         </aside>
     </footer>
+    <FooterTag />
+    </>
   )
 }
