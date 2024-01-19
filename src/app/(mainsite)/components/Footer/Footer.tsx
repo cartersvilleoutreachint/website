@@ -36,6 +36,7 @@ export default function Footer() {
           <ul className="footer-links">
             <a href="https://cartersvilleoutreach.org" target="_blank">Cartersville Outreach</a>
             <a href="https://cartersvilleoutreachwomenscenter.org" target="_blank">Women's Center</a>
+            <a href="https://cartersvilleoutreachmenscenter.org" target="_blank">Men's Center</a>
           </ul>
         </aside>
     </footer>
