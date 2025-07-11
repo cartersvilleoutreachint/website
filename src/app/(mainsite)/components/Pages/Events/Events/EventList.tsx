@@ -26,9 +26,8 @@ export default function EventList(props: eventsPropsType) {
         getData()
         async function getData(){
             const fetchEventData = await getEvents(searchStr);
-            setEventData(fetchEventData.data.filter((event: any)=>{
-                return event.date <= new Date().getTime()
-            }))
+            setEventData(fetchEventData.data
+            )
             setIsLoading(false)
         }
     }, [props.search])

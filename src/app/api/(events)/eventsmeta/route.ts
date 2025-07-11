@@ -17,10 +17,8 @@ export async function GET(){
         }})
         .sort({date: 1})
         .toArray()
-        console.log(results)
         return NextResponse.json({data: results})
     }catch(err){
-        console.log("failed")
         return NextResponse.json({error: err}, {status: 500})
     }
 }
