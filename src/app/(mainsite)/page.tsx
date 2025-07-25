@@ -5,12 +5,14 @@ import UpcomingEvents from "./components/Pages/HomePage/UpcomingEvents/UpcomingE
 import MakingImpact from "./components/Pages/HomePage/MakingImpact/MakingImpact"
 import RecentArticles from "./components/Pages/HomePage/RecentArticles/RecentArticles"
 import ComingSoon from "./components/Pages/HomePage/ComingSoon/ComingSoon"
+import Tent from "./components/Pages/HomePage/Tent/Tent"
 
 export default function Home() {
   return (
     <main id="homePage">
       <HomePageHeader />
-      <ComingSoon />
+      <Tent />
+      {/* <ComingSoon /> */}
       <MediaCoverage />
       <JailMinistry />
       <UpcomingEvents />
