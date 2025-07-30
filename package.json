@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "updatemain": "git checkout main && git add -A && echo 'Enter Commit Message' && read msg && git commit -m \"$msg\" && git push origin main"
+    "update": "git checkout main && git add -A && echo 'Enter Commit Message' && read msg && git commit -m \"$msg\" && git push origin main"
   },
   "dependencies": {
     "@kinde-oss/kinde-auth-nextjs": "^1.8.18",

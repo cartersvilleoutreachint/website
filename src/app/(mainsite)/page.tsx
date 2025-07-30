@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main id="homePage">
       <HomePageHeader />
-      <Tent />
+      {/* <Tent /> */}
       {/* <ComingSoon /> */}
       <MediaCoverage />
       <JailMinistry />
