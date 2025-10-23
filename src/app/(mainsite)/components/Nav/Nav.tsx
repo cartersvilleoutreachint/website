@@ -81,10 +81,6 @@ export default function Nav() {
           href={"/contact"}
           ><li>Contact</li></Link>
           <Link
-          className={(currentPage == "/blog") ? "active" : ""}
-          href={"/blog"}
-          ><li>Blog</li></Link>
-          <Link
           className={(currentPage == "/donate") ? "active" : ""}
           href={"/donate"}
           ><li>Donate</li></Link>

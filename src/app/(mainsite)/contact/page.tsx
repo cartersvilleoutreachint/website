@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ContactPage(){
     return(
         <main id="contactPage">
-            <PageBanner pageTitle="Contact Us" imgSrc="/img/pagebanners/contact.jpg" />
+            <PageBanner pageTitle="Contact Us" imgSrc="/img/pagebanners/contact.webp" />
             <ContactMethods />
             <ContactForm />
         </main>

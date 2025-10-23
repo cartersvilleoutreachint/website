@@ -17,7 +17,7 @@ export default function Home() {
       <JailMinistry />
       <UpcomingEvents />
       <MakingImpact />
-      <RecentArticles />
+      {/* <RecentArticles /> */}
     </main>
   )
 }
