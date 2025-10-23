@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function HomePageHeader() {
   return (
     <header className={styles.header} id="homepageHeader">
-        <div className="shader center">
+        <div className="shader center" style={{backgroundColor: "rgba(0,0,0,.7)"}}>
           <div className={styles.headerContent}>
             <h1 className={styles.mainHeading}>Bringing the Word of God to all corners of the earth</h1>
             <h3 className={styles.mainSubHeading}>Our mission is to see lives restored and transformed by the power of God.</h3>
