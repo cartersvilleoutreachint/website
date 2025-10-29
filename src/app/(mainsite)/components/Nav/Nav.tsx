@@ -88,6 +88,10 @@ export default function Nav() {
           className={(currentPage == "/ourteam") ? "active" : ""}
           href={"/ourteam"}
           ><li>Our Team</li></Link>
+           <Link
+          className={(currentPage == "/gallery") ? "active" : ""}
+          href={"/gallery"}
+          ><li>Pictures</li></Link>
         </ul>
       </div>
       <a href="https://www.facebook.com/profile.php?id=100064747237262" target="_blank" id="mainNavFacebookIcon">
