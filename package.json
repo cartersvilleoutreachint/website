@@ -24,6 +24,7 @@
     "react-dom": "18.2.0",
     "react-lottie-player": "^1.5.5",
     "react-multi-carousel": "^2.8.4",
+    "swiper": "^12.2.0",
     "typescript": "5.1.6"
   }
 }

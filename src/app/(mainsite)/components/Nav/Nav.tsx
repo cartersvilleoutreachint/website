@@ -73,10 +73,6 @@ export default function Nav() {
           href={"/"}
           ><li>Home</li></Link>
           <Link
-          className={(currentPage == "/events") ? "active" : ""}
-          href={"/events"}
-          ><li>Events</li></Link>
-          <Link
           className={(currentPage == "/contact") ? "active" : ""}
           href={"/contact"}
           ><li>Contact</li></Link>
@@ -89,14 +85,35 @@ export default function Nav() {
           href={"/ourteam"}
           ><li>Our Team</li></Link>
            <Link
-          className={(currentPage == "/gallery") ? "active" : ""}
-          href={"/gallery"}
-          ><li>Pictures</li></Link>
+          className={(currentPage == "/bustravel") ? "active" : ""}
+          href={"/bustravel"}
+          ><li>Bus Travel</li></Link>
+          
+          <Link
+          className={(currentPage == "/tentrevivals") ? "active" : ""}
+          href={"/tentrevivals"}
+          ><li>Tent Revivals</li></Link>
+          <Link
+          className={(currentPage == "/waterbaptisms") ? "active" : ""}
+          href={"/waterbaptisms"}
+          ><li>Water Baptisms</li></Link>
+          <Link
+          className={(currentPage == "/evangelism") ? "active" : ""}
+          href={"/evangelism"}
+          ><li>Evangelism</li></Link>
+          <Link
+          className={(currentPage == "/intercession") ? "active" : ""}
+          href={"/intercession"}
+          ><li>Intercession</li></Link>
+          <Link
+          className={(currentPage == "/licensing") ? "active" : ""}
+          href={"/licensing"}
+          ><li>Licensing</li></Link>
         </ul>
       </div>
-      <a href="https://www.facebook.com/profile.php?id=100064747237262" target="_blank" id="mainNavFacebookIcon">
+      {/* <a href="https://www.facebook.com/profile.php?id=100064747237262" target="_blank" id="mainNavFacebookIcon">
         <Image src="/img/facebook-icon.svg" alt="Facebook Icon" width={100} height={100} />
-      </a>
+      </a> */}
     </nav>
   )
 }

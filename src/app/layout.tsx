@@ -1,4 +1,9 @@
 import "./styles.css"
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import { Roboto, Oswald } from 'next/font/google'
 
 const roboto = Roboto({weight: ["100", "300", "400", "500", "700", "900"], subsets: ["latin"], display: "swap", variable: "--main-font"});
