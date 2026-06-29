@@ -1,6 +1,6 @@
 import ImageCarousel from "../../Misc/ImageCarousel/ImageCarousel"
 import PageBanner from "../../Misc/PageBanner/PageBanner"
-import styles from "./donate.module.css"
+import styles from "../../Misc/pagewcarousel.module.css"
 import Image from "next/image"
 
 export default function Tent() {
@@ -13,12 +13,13 @@ export default function Tent() {
        <ImageCarousel imgs={[
         "/img/carousel/tent/1.webp",
         "/img/carousel/tent/2.webp",
+        "/img/carousel/tent/3.webp",
         "/img/carousel/tent/1.webp",
         "/img/carousel/tent/2.webp",
+        "/img/carousel/tent/3.webp",
         "/img/carousel/tent/1.webp",
         "/img/carousel/tent/2.webp",
-        "/img/carousel/tent/1.webp",
-        "/img/carousel/tent/2.webp",
+        "/img/carousel/tent/3.webp",
       ]} />
         <div className={styles.content}>
           

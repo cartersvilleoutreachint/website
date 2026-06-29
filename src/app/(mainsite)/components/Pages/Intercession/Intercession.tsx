@@ -1,5 +1,5 @@
 import PageBanner from "../../Misc/PageBanner/PageBanner"
-import styles from "./donate.module.css"
+import styles from "../../Misc/pagewcarousel.module.css"
 import Image from "next/image"
 
 export default function Intercession() {

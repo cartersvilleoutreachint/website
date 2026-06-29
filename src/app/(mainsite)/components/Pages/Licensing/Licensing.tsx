@@ -13,7 +13,7 @@ export default function Licensing() {
       {/* PHOTOS */}
         <div>
            <br /><br />
-    <img src="/img/carousel/licensing/1.webp" style={{width: "80%"}} />
+    <img src="/img/carousel/licensing/main.webp" style={{width: "80%"}} />
     <br /><br />
            
             <br /><br />
