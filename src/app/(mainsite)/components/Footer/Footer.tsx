@@ -14,7 +14,7 @@ export default function Footer() {
             <a href="https://www.instagram.com/cvilleoutreachint" target="_blank">
                 <Image src="/img/instagram-icon.svg" alt="Instagram Icon" width={100} height={100}/>
             </a>
-            <a href="https://www.youtube.com/@cartersvilleoutreachminist800" target="_blank">
+            <a href="https://youtube.com/@cartersvilleoutreach?si=I4xflIOCi6VARgXb" target="_blank">
                 <Image src="/img/youtube-icon.svg" alt="YouTube Icon" width={100} height={100}/>
             </a>
         </aside>

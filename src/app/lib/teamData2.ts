@@ -18,6 +18,13 @@ const teamData2: teamMemberType[] = [
         role: "",
         description: ""
     },
+
+    {
+        name: "Enid Merck",
+        imgSrc: "/img/carousel/licensing/enid.webp",
+        role: "",
+        description: ""
+    },
    
     
 ]
