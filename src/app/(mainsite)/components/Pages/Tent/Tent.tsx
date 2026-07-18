@@ -14,12 +14,12 @@ export default function Tent() {
         "/img/carousel/tent/1.webp",
         "/img/carousel/tent/2.webp",
         "/img/carousel/tent/3.webp",
-        "/img/carousel/tent/1.webp",
-        "/img/carousel/tent/2.webp",
-        "/img/carousel/tent/3.webp",
-        "/img/carousel/tent/1.webp",
-        "/img/carousel/tent/2.webp",
-        "/img/carousel/tent/3.webp",
+        "/img/carousel/tent/4.webp",
+        "/img/carousel/tent/5.webp",
+        "/img/carousel/tent/6.webp",
+        "/img/carousel/tent/7.webp",
+        "/img/carousel/tent/8.webp",
+        "/img/carousel/tent/9.webp",
       ]} />
         <div className={styles.content}>
           
