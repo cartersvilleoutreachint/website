@@ -29,7 +29,7 @@ export default function UpcomingEvents() {
       }, [])
 
   return (
-    <section className={styles.upcomingEvents}>
+    <section className={styles.upcomingEvents} id="EventThing">
         <h2 className={styles.upcomingEventsTitle}>Upcoming Events</h2>
         {(isLoading) && <Loading />}
         {(!isLoading && eventsData.length == 0) && <div className={styles.noData}>No Events</div>}

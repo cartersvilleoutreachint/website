@@ -9,7 +9,7 @@ export default function HomePageHeader() {
             <h1 className={styles.mainHeading}>Bringing the Word of God to all corners of the earth</h1>
             <h3 className={styles.mainSubHeading}>Our mission is to see lives restored and transformed by the power of God.</h3>
             <div className="center">
-              <Link className={`${styles.upcomingEvents} main-button`} href="/events">Upcoming Events</Link>
+              <a className={`${styles.upcomingEvents} main-button`} href="#eventThing">Upcoming Events</a>
             </div>
           </div>
         </div>

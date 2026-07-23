@@ -17,7 +17,7 @@ export default function Tent() {
         "/img/carousel/tent/4.webp",
         "/img/carousel/tent/5.webp",
         "/img/carousel/tent/6.webp",
-        "/img/carousel/tent/7.webp",
+        // "/img/carousel/tent/7.webp",
         "/img/carousel/tent/8.webp",
         "/img/carousel/tent/9.webp",
       ]} />
