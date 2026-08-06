@@ -1,5 +1,5 @@
 import PageBanner from "../../Misc/PageBanner/PageBanner"
-import styles from "../../Misc/pagewcarousel.module.css"
+import styles from "./donate.module.css"
 import Image from "next/image"
 
 export default function Intercession() {
@@ -10,6 +10,10 @@ export default function Intercession() {
 
       {/* PHOTOS */}
         <div>
+
+          <br /><br />
+    <img src="/img/intercession2.webp" style={{width: "80%"}} />
+    <br /><br />
           
             <br /><br />
             <span>“So I sought for a man among them who would make a wall, and stand in the gap before Me on behalf of the land, that I should not destroy it; but I found no one.” - Ezekiel 22:30</span>
