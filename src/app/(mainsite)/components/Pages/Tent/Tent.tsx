@@ -9,7 +9,7 @@ export default function Tent() {
     <PageBanner imgSrc="/img/main-bg.jpg" pageTitle="Tent Revivals"/>
     <section className={styles.donateSection}>
 
-      {/* PHOTOSdd */}
+      {/* PHOTOS */}
        <ImageCarousel imgs={[
         "/img/carousel/tent/10.webp",
         "/img/carousel/tent/1.webp",
