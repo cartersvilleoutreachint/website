@@ -11,6 +11,7 @@ export default function Tent() {
 
       {/* PHOTOSdd */}
        <ImageCarousel imgs={[
+        "/img/carousel/tent/10.webp",
         "/img/carousel/tent/1.webp",
         "/img/carousel/tent/2.webp",
         "/img/carousel/tent/3.webp",
