@@ -1,3 +1,4 @@
+"use client"
 import styles from "./events.module.css"
 import EventList from "./EventList"
 

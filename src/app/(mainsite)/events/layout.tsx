@@ -16,7 +16,7 @@ export default function EventsLayout({
         
         <main id="eventsPage">
         <PageBanner pageTitle="Events" imgSrc="/img/pagebanners/event.webp" />
-        <SearchBar targetPageUrl="/events" />
+        {/* <SearchBar targetPageUrl="/events" /> */}
         {children}
       </main>
        
