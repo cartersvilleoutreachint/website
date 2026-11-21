@@ -11,6 +11,9 @@ export default function Tent() {
 
       {/* PHOTOS */}
        <ImageCarousel imgs={[
+        "/img/carousel/tent/14.webp",
+        "/img/carousel/tent/15.webp",
+        "/img/carousel/tent/16.webp",
         "/img/carousel/tent/10.webp",
         "/img/carousel/tent/1.webp",
         "/img/carousel/tent/2.webp",
@@ -21,6 +24,10 @@ export default function Tent() {
         // "/img/carousel/tent/7.webp",
         "/img/carousel/tent/8.webp",
         "/img/carousel/tent/9.webp",
+        "/img/carousel/tent/11.webp",
+        "/img/carousel/tent/12.webp",
+        // "/img/carousel/tent/13.webp",
+        
       ]} />
         <div className={styles.content}>
           

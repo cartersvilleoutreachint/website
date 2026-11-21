@@ -11,7 +11,9 @@ export default function Evangelism() {
 
        {/* PHOTOS */}
        <ImageCarousel imgs={[
+        
         "/img/carousel/evang/1.webp",
+        "/img/carousel/evang/9.webp",
         "/img/carousel/evang/2.webp",
         "/img/carousel/evang/3.webp",
         "/img/carousel/evang/4.webp",
